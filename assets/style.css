@@ -1,0 +1,34 @@
+*{
+    margin: opx;
+    padding: 0px;
+    border: 0px;
+    vertical-align: middle;
+    font-size: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    z-index: 100;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+
+.navbar a{
+    display: block;
+    padding: 15px 15px;
+    color: darkgrey;
+    text-decoration: none;
+    font-weight: bolder;
+
+}
+
+nav a:hover{
+    background: blueviolet;
+}
