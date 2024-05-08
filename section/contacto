@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            
+            <li>
+                <a href="index.html">INICIO</a>
+            </li>
+            <li>
+                <a href="./section/nuevo">NUEVO</a>
+            </li>
+            <li>
+                <a href="./section/espera">EN ESPERA</a>
+            </li>
+            <li>
+                <a href="./section/contacto">CONTACTO</a>
+            </li>
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <section>
+<section class="grilla">
+            <div class="introduccion">
+                <h2 class="subtitulo">PARA QUE NOS NECESITAS</h2>
+                <p>
+                En un sistema de gestión de tickets de soporte, los clientes y los agentes pueden:
+                Realizar un seguimiento del estado general de la solicitud;
+                Tener un acceso a los datos que se brindaron desde el primer contacto;
+                Acceder rápidamente al historial completo de las conversaciones entre los clientes y agentes.
+                El ticket de soporte técnico permite organizar las incidencias y recopilar la mayor cantidad de 
+                datos de clientes, lo que posibilita resolverlas en un período de tiempo más breve e identificar 
+                aquellas repetidas para solucionarlas en conjunto.
+
+                </p>
+            </div>
+
+        </section>
