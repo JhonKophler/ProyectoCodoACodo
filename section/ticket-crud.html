@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style-ticket.css">
+  <script src="/JS/componentes.js"></script>
+  <title>Ticket Track</title>
+</head>
+
+
+<body>
+  <nav class="navbar"></nav>
+  </nav>
+  <header class="header">
+    <h2><a href="#" class="titulo">NUEVO </a></h2>
+
+  </header>
+  
+  <section class="ticket-section">
+    <h1 class="title">Tus Tickets</h1>
+    <button id="sort-tickets">Ordenar</button>
+    <div id="cont-tickets" class="container">
+      <div class="card">
+
+        <div class="card-header" id="Alta"></div>
+        
+        <div class="card-body">
+          <p>#1234</p>
+          <p>
+            aca va la descripcion del ticket Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
+            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
+            architecto neque non consequuntur? Necessitatibus quibusdam vel
+            fugit a laboriosam.
+          </p>
+        </div>
+        <div class="card-footer">
+          <p>hora 12:00 pm</p>
+          <a href="progreso.html">Progreso</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="Baja"></div>
+        <div class="card-body">
+          <p>#2345</p>
+          <p>
+            aca va la descripcion del ticket Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
+            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
+            architecto neque non consequuntur? Necessitatibus quibusdam vel
+            fugit a laboriosam.
+          </p>
+        </div>
+        <div class="card-footer">
+          <p>hora 12:00 pm</p>
+          <a href="progreso.html">Progreso</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="Baja"></div>
+        <div class="card-body">
+          <p>#3456</p>
+          <p>
+            aca va la descripcion del ticket Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
+            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
+            architecto neque non consequuntur? Necessitatibus quibusdam vel
+            fugit a laboriosam.
+          </p>
+        </div>
+        <div class="card-footer">
+          <p>hora 12:00 pm</p>
+          <a href="progreso.html">Progreso</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="Baja"></div>
+        <div class="card-body">
+          <p>#4567</p>
+          <p>
+            aca va la descripcion del ticket Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
+            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
+            architecto neque non consequuntur? Necessitatibus quibusdam vel
+            fugit a laboriosam.
+          </p>
+        </div>
+        <div class="card-footer">
+          <p>hora 12:00 pm</p>
+          <a href="progreso.html">Progreso</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="Alta">
+        </div>
+        <div class="card-body">
+          <p>#5678</p>
+          <p>
+            aca va la descripcion del ticket Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
+            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
+            architecto neque non consequuntur? Necessitatibus quibusdam vel
+            fugit a laboriosam.
+          </p>
+        </div>
+        <div class="card-footer">
+          <p>hora 12:00 pm</p>
+          <a href="progreso.html">Progreso</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="Baja"></div>
+        <div class="card-body">
+          <p>#6789</p>
+          <p>
+            aca va la descripcion del ticket Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
+            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
+            architecto neque non consequuntur? Necessitatibus quibusdam vel
+            fugit a laboriosam.
+          </p>
+        </div>
+        <div class="card-footer">
+          <p>hora 12:00 pm</p>
+          <a href="progreso.html">Progreso</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>Ticket<span>Track</span></p>
+    <p>Soporte de ayuda</p>
+    <p>node.js codo a codo</p>
+  </footer>
+</body>
+
+<script>
+
+  Navbar();
+  Footer();
+
+  var listaElementos = Array.from(document.querySelector(".container").children);
+  
+  Ordenar();
+
+  var boton = document.getElementById("sort-tickets");
+  // Agrega un event listener para el clic en el botón
+  boton.addEventListener("click", Ordenar);
+
+  setTimeout(function() {
+        listaElementos.forEach(function (elemento) {
+            elemento.style.transform = "scale(1)";
+        });
+    }, 50);
+
+</script>
+
+</html>
