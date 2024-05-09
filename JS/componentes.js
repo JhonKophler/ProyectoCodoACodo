@@ -33,15 +33,15 @@ function Navbar() {
     </div>`;
 }
 
-function PrioridadCard() {
-  const alta = `<p>Alta</p><div style="background: rgba(251, 4, 61, 0.5)" class="card-header-circle"></div>`;
-  const inter = `<p>Intermedia</p><div style="background: rgba(255, 242, 0, 0.824);" class="card-header-circle"></div>`;
-  const baja = `<p>Baja</p><div style="background: rgba(51, 255, 0, 0.5)" class="card-header-circle"></div>`;
+// function PrioridadCard() {
+//   const alta = `<p>Alta</p><div style="background: rgba(251, 4, 61, 0.5)" class="card-header-circle"></div>`;
+//   const inter = `<p>Intermedia</p><div style="background: rgba(255, 242, 0, 0.824);" class="card-header-circle"></div>`;
+//   const baja = `<p>Baja</p><div style="background: rgba(51, 255, 0, 0.5)" class="card-header-circle"></div>`;
 
-  var prioridad = document.getElementsByClassName(".card-header")[0];
-  console.log(prioridad);
-  //miNav.innerHTML =
-}
+//   var prioridad = document.getElementsByClassName(".card-header")[0];
+//   console.log(prioridad);
+  
+// }
 
 
 //componentes
