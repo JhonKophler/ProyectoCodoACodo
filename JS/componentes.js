@@ -1,28 +1,28 @@
 //funciones
-function Ordenar() {
-  // Reordena los elementos de manera aleatoria
-  listaElementos.sort(function (a, b) {
-    return 0.5 - Math.random();
-  });
+// function Ordenar() {
+//   // Reordena los elementos de manera aleatoria
+//   listaElementos.sort(function (a, b) {
+//     return 0.5 - Math.random();
+//   });
 
-  // Elimina todos los elementos del contenedor
-  var contenedor = document.querySelector(".container");
-  contenedor.innerHTML = "";
+//   // Elimina todos los elementos del contenedor
+//   var contenedor = document.querySelector(".container");
+//   contenedor.innerHTML = "";
 
-  // Agrega los elementos reordenados al contenedor
-  listaElementos.forEach(function (elemento) {
-    contenedor.appendChild(elemento);
-  });
-}
+//   // Agrega los elementos reordenados al contenedor
+//   listaElementos.forEach(function (elemento) {
+//     contenedor.appendChild(elemento);
+//   });
+// }
 
 //componentes
 function Navbar() {
-  var miNav = document.getElementsByClassName("navbar")[0];
+  var miNav = document.getElementsByClassName("navbar-nb")[0];
   miNav.innerHTML = `<div class="brand-container">
     <img src="../assets/img/ticket-logo.png" alt="ticket-logo" />
     <p>Ticket<span>Track</span></p>
     </div>
-    <div class="nav-links">
+    <div class="nav-links-nb">
     <a href="../index.html">Inicio</a>
     
     <a href="../section/ticket-crud.html">Ticket</a>
