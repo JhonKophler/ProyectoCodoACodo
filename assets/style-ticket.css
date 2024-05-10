@@ -115,7 +115,7 @@ nav a:hover {
 }
 
 .card {
-  width: 80%;
+  width: 70%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -128,6 +128,7 @@ nav a:hover {
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
+
   position: relative; /* Establece posición relativa para la animación */
   transition: top 0.3s ease-in-out, left 0.3s ease-in-out; /* Transición suave de posición */
 }
@@ -143,8 +144,6 @@ nav a:hover {
   height: 40px;
   border-radius: 50%;
 }
-
-
 
 .card-body p:first-child {
   font-size: 24px;
