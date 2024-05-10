@@ -14,11 +14,11 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.navbar {
+.navbar-nb {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 10vh;
   width: 100%;
   padding: 0 10vw;
   backdrop-filter: blur(16px) saturate(180%);
@@ -46,14 +46,14 @@ body {
   height: 100%;
 }
 
-.nav-links {
+.nav-links-nb{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.navbar a {
+.navbar-nb a {
   display: block;
   padding: 15px 15px;
   color: white;
@@ -63,11 +63,11 @@ body {
 }
 
 nav a:hover {
-  background: blueviolet;
-  border-radius: 10%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
-.header {
+/* .header-nb{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@ nav a:hover {
   gap: 2rem;
   height: 60vh;
  
-}
+} */
 
 .titulo {
   font-size: 40px;
@@ -101,7 +101,7 @@ nav a:hover {
   text-align: center;
 }
 
-.container {
+.container-nb {
   
   padding: 1rem;
   display: grid;
@@ -114,7 +114,7 @@ nav a:hover {
   
 }
 
-.card {
+.card-nb {
   width: 80%;
   height: 100%;
   display: flex;
@@ -132,13 +132,13 @@ nav a:hover {
   transition: top 0.3s ease-in-out, left 0.3s ease-in-out; /* Transición suave de posición */
 }
 
-.card-header {
+.card-header-nb {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.card-header-circle {
+.card-header-circle-nb {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -146,26 +146,26 @@ nav a:hover {
 
 
 
-.card-body p:first-child {
+.card-body-nb p:first-child {
   font-size: 24px;
   font-weight: 700;
   text-align: left;
 }
 
-.card-body p:nth-child(2) {
+.card-body-nb p:nth-child(2) {
   font-size: 16px;
   font-weight: 400;
   text-align: left;
 }
 
-.card-footer {
+.card-footer-nb {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 2rem;
 }
 
-.card-footer a {
+.card-footer-nb a {
   text-decoration: none;
   color: #fff;
   font-size: 16px;
