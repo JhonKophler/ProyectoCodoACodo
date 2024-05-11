@@ -14,7 +14,7 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.navbar {
+.navbar-nb {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,14 +46,14 @@ body {
   height: 100%;
 }
 
-.nav-links {
+.nav-links-nb{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.navbar a {
+.navbar-nb a {
   display: block;
   padding: 15px 15px;
   color: white;
