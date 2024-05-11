@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-size: 100%;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.section-title{
+    font-size: 2.5em;
+    text-align: center;
+    padding: 1rem;
+}
+
+.detail-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.detail-card{
+    width: 60%;
+    height: 70%;
+    color: #fff;
+    padding: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.detail-card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-card-header p{
+    font-size: 1.5em;
+}
+
+.detail-card-header-circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: red;
+    color: black;
+}
+
+.detail-card-body{
+    margin-top: 2em;
+    font-size: 1.5rem;
+}
+
+.detail-card-body p, h3{
+    margin-top: 1em;
+}
+
+.detail-card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+    font-size: larger;
+    
+}
+
+.detail-card-footer p{
+    font-size: 1.5em;
+}
+
+.detail-sidebar{
+    width: 30%;
+    height: 70%;
+    color: #fff;
+    padding: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    margin-left: 1em;
+}
+
+.detail-options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    font-size: larger;
+}
+
+.detail-options a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    padding: 0.5em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    margin-top: 1em;
+    width: 80%;
+    text-align: center;
+}
+
+.detail-options a:hover{
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    margin-top: 1em;
+    width: 80%;
+    text-align: center;
+    cursor: pointer;
+    
+}
