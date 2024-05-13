@@ -29,7 +29,7 @@ function Navbar() {
     
     <a href="../section/login-register.html">Login</a>
     
-    <a href="../section/contacto.html">Contacto</a>
+    <a href="../section/about-us.html">Nosotros</a>
     </div>`;
 }
 
@@ -50,7 +50,5 @@ function Footer() {
   footer.innerHTML = 
   `<p>Ticket<span>Track</span></p>
     <p>Soporte de ayuda</p>
-    <p>node.js codo a codo</p>
-    <p>ACA ESTA EL CAMBIO NUEVO</p>
-  `;
+    <p>node.js codo a codo</p>`;
 }
