@@ -14,11 +14,11 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.navbar {
+.navbar-nb {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 10vh;
   width: 100%;
   padding: 0 10vw;
   backdrop-filter: blur(16px) saturate(180%);
@@ -46,14 +46,14 @@ body {
   height: 100%;
 }
 
-.nav-links {
+.nav-links-nb{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.navbar a {
+.navbar-nb a {
   display: block;
   padding: 15px 15px;
   color: white;
@@ -63,8 +63,8 @@ body {
 }
 
 nav a:hover {
-  background: blueviolet;
-  border-radius: 10%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .header {
@@ -73,10 +73,10 @@ nav a:hover {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  height: 60vh;
+  height: 30vh;
  
 }
-
+/*
 .titulo {
   font-size: 40px;
   text-transform: uppercase;
@@ -88,7 +88,7 @@ nav a:hover {
   color: antiquewhite;
   font-size: 18px;
 }
-
+.titulo {
 /* .ticket-section {
   height: 100vh;
 } */

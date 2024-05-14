@@ -16,11 +16,11 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.navbar {
+.navbar-nb {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 10vh;
   width: 100%;
   padding: 0 10vw;
   backdrop-filter: blur(16px) saturate(180%);
@@ -48,14 +48,14 @@ body {
   height: 100%;
 }
 
-.nav-links {
+.nav-links-nb{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
-.navbar a {
+.navbar-nb a {
   display: block;
   padding: 15px 15px;
   color: white;
@@ -65,8 +65,8 @@ body {
 }
 
 nav a:hover {
-  background: blueviolet;
-  border-radius: 10%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .header {
@@ -80,28 +80,30 @@ nav a:hover {
 }
 
 .titulo {
-  font-size: 40px;
+  font-size: 50px;
   text-transform: uppercase;
   color: rgb(78, 77, 77);
   text-decoration: none;
+  text-align: center;
 }
 
+.grilla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 60vh;
+ 
+} 
 .nosotros{ 
   color: antiquewhite;
-  font-size: 20px;
+  font-size: 18px;
   max-width: 50%;
   text-align: center;
 
 }
-.grilla {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
-    height: 60vh;
-   
-}
+
 .opiniones{
   max-width: 1200px;
   margin: auto;
@@ -109,9 +111,15 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10rem;
+  
+}
+.h1{
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--primary color--)
 
 }
-
 .heading {
   font-size: 25px;
   text-transform: uppercase;
@@ -120,21 +128,16 @@ nav a:hover {
   text-align: center;
   outline: none;
   border: none;
-  border-radius: 5px;;
+  border-radius: 5px;
 }
 
-.comentario {
+
+.comentario, .servicio{
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   font-style: normal;
 }
 
-/*
-.servicio {
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 100;
-  font-style: normal;
-} */
 
 .caja-contenedor{
   display: grid;
@@ -150,7 +153,7 @@ nav a:hover {
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  background-color: whitesmoke;
+  background-color:lightpink;
 }
 
 
