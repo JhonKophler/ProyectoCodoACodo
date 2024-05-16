@@ -12,13 +12,27 @@
 }
 
 .brand-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
     gap: 1rem;
     font-size: xx-large;
     font-weight: bolder;
     color: white;
+}
+
+.brand-container>a{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    padding: 0!important;
+}
+
+.brand-container>a p{
+    margin: 0!important;
+}
+
+.brand-container>a:hover{
+    background: none!important;
+    border-radius: none!important;
 }
 
 .brand-container span {
@@ -50,3 +64,4 @@
     background: blueviolet;
     border-radius: 10%;
 }
+

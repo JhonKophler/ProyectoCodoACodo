@@ -18,18 +18,21 @@
 //componentes
 function Navbar() {
   var miNav = document.getElementsByClassName("navbar-nb")[0];
-  miNav.innerHTML = `<div class="brand-container">
-    <img src="../assets/img/ticket-logo.png" alt="ticket-logo" />
-    <p>Ticket<span>Track</span></p>
+  miNav.innerHTML = `
+    <div class="brand-container">
+      <a href="../index.html">
+        <img src="../assets/img/ticket-logo.png" alt="ticket-logo" />
+        <p>Ticket<span>Track</span></p>
+      </a>
     </div>
     <div class="nav-links-nb">
-    <a href="../index.html">Inicio</a>
-    
-    <a href="../section/ticket-crud.html">Ticket</a>
-    
-    <a href="../section/login-register.html">Login</a>
-    
-    <a href="../section/about-us.html">Nosotros</a>
+      <a href="../index.html">Inicio</a>
+      
+      <a href="../section/ticket-crud.html">Ticket</a>
+      
+      <a href="../section/login-register.html">Login</a>
+      
+      <a href="../section/about-us.html">Nosotros</a>
     </div>`;
 }
 
