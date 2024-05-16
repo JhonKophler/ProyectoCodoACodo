@@ -27,10 +27,10 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  height: 60vh;
+  height: 30vh;
  
 }
-
+/*
 .titulo {
   font-size: 40px;
   text-transform: uppercase;
@@ -42,7 +42,7 @@ body {
   color: antiquewhite;
   font-size: 18px;
 }
-
+.titulo {
 /* .ticket-section {
   height: 100vh;
 } */

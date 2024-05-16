@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 @import './navbar.css';
 @import './footer.css';
 
+=======
+@import url(<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<title>Ticket Track</title>);
+>>>>>>> CambiosAlDia-15-5
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +26,81 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
+<<<<<<< HEAD
+=======
+.navbar-nb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  padding: 0 10vw;
+  backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  color: white;
+}
+
+.brand-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: xx-large;
+  font-weight: bolder;
+  color: white; 
+}
+
+.brand-container span {
+  color: gray;
+}
+
+.brand-container img {
+  width: 100px;
+  height: 100%;
+}
+
+.nav-links-nb{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-nb a {
+  display: block;
+  padding: 15px 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: 0.5s ease;
+}
+
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+>>>>>>> CambiosAlDia-15-5
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 30vh;
+ 
+}
+
+.titulo {
+  font-size: 50px;
+  text-transform: uppercase;
+  color: rgb(78, 77, 77);
+  text-decoration: none;
+  text-align: center;
+}
+
+.grilla {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,24 +108,74 @@ body {
   gap: 2rem;
   height: 60vh;
  
-}
-
-.titulo {
-  font-size: 40px;
-  text-transform: uppercase;
-  color: rgb(78, 77, 77);
-  text-decoration: none;
-}
-
-.subTitle {
+} 
+.nosotros{ 
   color: antiquewhite;
   font-size: 18px;
+  max-width: 50%;
+  text-align: center;
+
 }
 
-.title {
-  font-size: 40px;
+.opiniones{
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10rem;
+  
+}
+.h1{
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--primary color--)
+
+}
+.heading {
+  font-size: 25px;
   text-transform: uppercase;
   color: black;
   text-decoration: none;
   text-align: center;
+<<<<<<< HEAD
+=======
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.comentario, .servicio{
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+.caja-contenedor{
+  display: grid;
+  gap: 2rem;
+}
+
+.caja{
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background-color:lightpink;
+}
+
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+>>>>>>> CambiosAlDia-15-5
 }

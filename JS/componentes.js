@@ -19,18 +19,18 @@
 function Navbar() {
   var miNav = document.getElementsByClassName("navbar-nb")[0];
   miNav.innerHTML = `<div class="brand-container">
-      <img src="../assets/img/ticket-logo.png" alt="ticket-logo" />
-      <p>Ticket<span>Track</span></p>
-      </div>
-      <div class="nav-links-nb">
-      <a href="../index.html">Inicio</a>
-      
-      <a href="../section/ticket-crud.html">Ticket</a>
-      
-      <a href="../section/login-register.html">Login</a>
-      
-      <a href="../section/contacto.html">Contacto</a>
-      </div>`;
+    <img src="../assets/img/ticket-logo.png" alt="ticket-logo" />
+    <p>Ticket<span>Track</span></p>
+    </div>
+    <div class="nav-links-nb">
+    <a href="../index.html">Inicio</a>
+    
+    <a href="../section/ticket-crud.html">Ticket</a>
+    
+    <a href="../section/login-register.html">Login</a>
+    
+    <a href="../section/about-us.html">Nosotros</a>
+    </div>`;
 }
 
 // function PrioridadCard() {
@@ -48,5 +48,5 @@ function Footer() {
   var footer = document.getElementsByTagName("footer")[0];
   footer.innerHTML = `<p>Ticket<span>Track</span></p>
     <p>Soporte de ayuda</p>
-  `;
+    <p>node.js codo a codo</p>`;
 }
