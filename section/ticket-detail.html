@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <title>Ticket Detail</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Detail</title>
-    <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/assets/style-ticket-detail.css">
+    <link rel="stylesheet" href="../assets/ticket-detail.css">
     <script src="/JS/componentes.js"></script>
-    <script src="/JS/navbar.js"></script>
-
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon">
+    <!-- animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
-    
-    <h1 class="section-title">Progreso del ticket</h1>
+    <nav class="navbar-nb"></nav>
+
+    <h1 class="section-title">Detalles del ticket</h1>
     <section class="detail-section">
         <div class="detail-card">
             <div class="detail-card-header">
@@ -43,9 +50,16 @@
                 <a href="" class="btn">Opcion 3</a>
                 <a href="" class="btn">Opcion 4</a>
             </div>
-            
+
 
         </aside>
     </section>
+    <footer></footer>
 </body>
+<script>
+    Navbar();
+    Footer();
+</script>
+<script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
+
 </html>

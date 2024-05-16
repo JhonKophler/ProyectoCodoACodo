@@ -21,32 +21,6 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-/* .header-nb{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-  height: 60vh;
- 
-} 
-
-.titulo {
-  font-size: 40px;
-  text-transform: uppercase;
-  color: rgb(78, 77, 77);
-  text-decoration: none;
-}
-
-.subTitle {
-  color: antiquewhite;
-  font-size: 18px;
-}
-
-/* .ticket-section {
-  height: 100vh;
-} */
-
 .title {
   font-size: 40px;
   text-transform: uppercase;
@@ -78,7 +52,7 @@ body {
   text-align: center;
   padding: 1em;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(40 12 105 / 38%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
