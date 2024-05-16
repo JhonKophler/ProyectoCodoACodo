@@ -4,244 +4,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/style-ticket.css">
+  <link rel="stylesheet" href="../assets/ticket.css" />
   <script src="/JS/componentes.js"></script>
-  <title>Ticket Track</title>
   <!-- favicon -->
-  <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon">
+  <!-- animaciones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 
 <body>
   <nav class="navbar-nb"></nav>
-  </nav>
 
-  <header class="container row col-12 m-auto">
-    <h2 class="title col-6 m-auto ">NUEVO TICKET</h2>
-    <form class="row g-3 needs-validation col-6" novalidate>
-      <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Titulo</label>
-        <input type="text" class="form-control" id="validationCustom01" placeholder="Titulo" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Descripcion</label>
-        <input type="text" class="form-control" id="validationCustom02" placeholder="Descripcion" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-     
-      
-      <div class="col-md-3">
-        <label for="validationCustom04" class="form-label">Prioridad</label>
-        <select class="form-select" id="validationCustom04" required>
-          <option selected disabled value="">Prioridad</option>
-          <option>Alta</option>
-          <option>Media</option>
-          <option>Baja</option>
-        </select>
-        <div class="invalid-feedback">
-          Please select a valid state.
-        </div>
-      </div>
-      
-      
-      <div class="col-12">
-        <button class="btn btn-primary" type="submit">Enviar ticket</button>
-      </div>
-    </form>
+  <header class="container col-12 row">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Cargar Ticket
+    </button>
 
-  </header>
-  
-  <section class="ticket-section">
-    <h1 class="title">Tus Tickets</h1>
-    
-    <div id="cont-tickets" class="container-nb">
-      <div class="card-nb">
+    <!-- Modal -->
+    <div  class="modal fade "   id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+      <div class="modal-dialog modal-dialog-centered modal-xl" data-bs-theme="dark">
+        <div class="modal-content " >
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Ticket</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3 needs-validation col-6" novalidate>
+              <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Titulo</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Titulo" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="Descripcion" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
 
-        <div class="card-header-nb" id="Alta">
-          <p>Alta</p><div style="background: rgba(251, 4, 61, 0.5)" class="card-header-circle-nb"></div>
-        </div>
-        
-        <div class="card-body-nb">
-          <p>#1234</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Boton</a>
-        </div>
-      </div>
 
-      <div class="card-nb">
-        <div class="card-header-nb" id="Baja">
-          <p>Baja</p><div style="background: rgba(51, 255, 0, 0.5)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#2345</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
-        </div>
-      </div>
+              <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Prioridad</label>
+                <select class="form-select" id="validationCustom04" required>
+                  <option selected disabled value="">Prioridad</option>
+                  <option>Alta</option>
+                  <option>Media</option>
+                  <option>Baja</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
 
-      <div class="card-nb">
-        <div class="card-header-nb" id="Baja">
-          <p>Baja</p><div style="background: rgba(51, 255, 0, 0.5)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#3456</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
-        </div>
-      </div>
 
-      <div class="card-nb">
-        <div class="card-header-nb" id="intermedia">
-          <p>intermedia</p>
-          <div style="background: rgba(255, 255, 2, 0.86)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#4567</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
-        </div>
-      </div>
-
-      <div class="card-nb">
-        <div class="card-header-nb" id="Alta">
-          <p>Alta</p><div style="background: rgba(251, 4, 61, 0.5)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#5678</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
-        </div>
-      </div>
-
-      <div class="card-nb">
-        <div class="card-header-nb" id="intermedia">
-          <p>intermedia</p>
-          <div style="background: rgba(255, 255, 2, 0.86)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#6789</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
+              <div class="col-12">
+                <button class="btn btn-primary" >Enviar ticket</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
         </div>
       </div>
     </div>
+
+  </header>
+
+  <section class="ticket-section">
+    <h1 class="title">Tus Tickets</h1>
+    <div id="cont-tickets" class="container-nb"></div>
   </section>
-
-
-  <footer>
-    <p>Ticket<span>Track</span></p>
-    <p>Soporte de ayuda</p>
-    <p>node.js codo a codo</p>
-  </footer>
+  <footer></footer>
 </body>
 
 
 
 
 <!-- js de bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <script>
 
   Navbar();
   Footer();
 
-  // var listaElementos = Array.from(document.querySelector(".container").children);
-  
-  // Ordenar();
+  cargarJSON('/JS/datos.json', function (response) {
+    var datos = JSON.parse(response);
+    mostrarTickets(datos.tickets);
+  });
 
-  // var boton = document.getElementById("sort-tickets");
-  // // Agrega un event listener para el clic en el botón
-  // boton.addEventListener("click", Ordenar);
+  (function () {
+    'use strict'
 
-  // setTimeout(function() {
-  //       listaElementos.forEach(function (elemento) {
-  //           elemento.style.transform = "scale(1)";
-  //       });
-  //   }, 50);
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
 
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
 </script>
+<script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
 
 </html>

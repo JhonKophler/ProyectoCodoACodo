@@ -1,4 +1,7 @@
-*{
+@import './navbar.css';
+@import './footer.css';
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,28 +9,32 @@
     font-size: 100%;
 }
 
-html{
+p {
+    margin-top: 0 !important;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.section-title{
+.section-title {
     font-size: 2.5em;
     text-align: center;
     padding: 1rem;
 }
 
-.detail-section{
+.detail-section {
     display: flex;
-    justify-content: center;
+    /* height: 100vh; */
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
 }
 
-.detail-card{
+.detail-card {
     width: 60%;
     height: 70%;
     color: #fff;
@@ -39,17 +46,17 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-.detail-card-header{
+.detail-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.detail-card-header p{
+.detail-card-header p {
     font-size: 1.5em;
 }
 
-.detail-card-header-circle{
+.detail-card-header-circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -57,31 +64,30 @@ body{
     color: black;
 }
 
-.detail-card-body{
+.detail-card-body {
     margin-top: 2em;
     font-size: 1.5rem;
 }
 
-.detail-card-body p, h3{
+.detail-card-body p,
+h3 {
     margin-top: 1em;
 }
 
-.detail-card-footer{
+.detail-card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 2em;
     font-size: larger;
-    
+
 }
 
-.detail-card-footer p{
+.detail-card-footer p {
     font-size: 1.5em;
 }
 
-.detail-sidebar{
-    width: 30%;
-    height: 70%;
+.detail-sidebar {
     color: #fff;
     padding: 1em;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -92,16 +98,14 @@ body{
     margin-left: 1em;
 }
 
-.detail-options{
+.detail-options {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: row;
     height: 100%;
     font-size: larger;
 }
 
-.detail-options a{
+.detail-options a {
     text-decoration: none;
     color: black;
     font-size: 1.5em;
@@ -111,12 +115,11 @@ body{
     backdrop-filter: blur(16px) saturate(180%);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
-    margin-top: 1em;
     width: 80%;
     text-align: center;
 }
 
-.detail-options a:hover{
+.detail-options a:hover {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(16px) saturate(180%);
     border-radius: 12px;
@@ -125,5 +128,5 @@ body{
     width: 80%;
     text-align: center;
     cursor: pointer;
-    
+
 }

@@ -1,0 +1,60 @@
+@import './footer.css';
+@import './navbar.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  height: 80vh;
+ 
+}
+
+.titulo {
+  font-size: 50px;
+  text-transform: uppercase;
+  color: rgb(78, 77, 77);
+  text-decoration: none;
+  text-align: center;
+}
+
+.subTitle {
+  color: antiquewhite;
+  font-size: 20px;
+  max-width: 50%;
+  text-align: center;
+}
+
+.header-btns a{
+  padding: 10px 20px;
+  color: white;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: 0.5s ease;
+}
+
+.header-btns a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+}
