@@ -61,116 +61,10 @@
 
   <section class="ticket-section">
     <h1 class="title">Tus Tickets</h1>
-    <button id="sort-tickets">Ordenar</button>
-    <div id="cont-tickets" class="container-nb">
-      <div class="card-nb">
 
-        <div class="card-header-nb" id="Alta">
-          <p>Alta</p>
-          <div style="background: rgba(251, 4, 61, 0.5)" class="card-header-circle-nb"></div>
-        </div>
+    <!-- <button id="sort-tickets">Ordenar</button> -->
 
-        <div class="card-body-nb">
-          <p>#1234</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Boton</a>
-        </div>
-      </div>
-
-      <div class="card-nb">
-        <div class="card-header-nb" id="Baja">
-          <p>Baja</p>
-          <div style="background: rgba(51, 255, 0, 0.5)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#2345</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
-        </div>
-      </div>
-
-      <div class="card-nb">
-        <div class="card-header-nb" id="Baja">
-          <p>Baja</p>
-          <div style="background: rgba(51, 255, 0, 0.5)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#3456</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
-        </div>
-      </div>
-
-      <div class="card-nb">
-        <div class="card-header-nb" id="intermedia">
-          <p>intermedia</p>
-          <div style="background: rgba(255, 255, 2, 0.86)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#4567</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
-        </div>
-      </div>
-
-      <div class="card-nb">
-        <div class="card-header-nb" id="Alta">
-          <p>Alta</p>
-          <div style="background: rgba(251, 4, 61, 0.5)" class="card-header-circle-nb"></div>
-        </div>
-        <div class="card-body-nb">
-          <p>#5678</p>
-          <p>
-            aca va la descripcion del ticket Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-            pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-            architecto neque non consequuntur? Necessitatibus quibusdam vel
-            fugit a laboriosam.
-          </p>
-        </div>
-        <div class="card-footer-nb">
-          <p>hora 12:00 pm</p>
-          <a href="ticket-detail.html">Progreso</a>
-        </div>
-      </div>
-
-    </div>
+    <div id="cont-tickets" class="container-nb"></div>
   </section>
   <footer></footer>
 </body>
@@ -187,22 +81,11 @@
   Navbar();
   Footer();
 
-  // var listaElementos = Array.from(document.querySelector(".container").children);
+  cargarJSON('/JS/datos.json', function (response) {
+    var datos = JSON.parse(response);
+    mostrarTickets(datos.tickets);
+  });
 
-  // Ordenar();
-
-  // var boton = document.getElementById("sort-tickets");
-  // // Agrega un event listener para el clic en el botón
-  // boton.addEventListener("click", Ordenar);
-
-  // setTimeout(function() {
-  //       listaElementos.forEach(function (elemento) {
-  //           elemento.style.transform = "scale(1)";
-  //       });
-  //   }, 50);
-
-
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function () {
     'use strict'
 
@@ -222,6 +105,8 @@
         }, false)
       })
   })()
+
+
 </script>
 <script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
 

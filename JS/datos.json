@@ -32,18 +32,20 @@
     ],
     "tickets": [
         {
-            "id": "1",
+            "id": "1123",
             "prioridad": "alta",
+            "colorPrioridad": "#33ff0080",
             "user": "juancorso",
             "titulo": "se rompió la impresora del pasillo",
-            "detalle": "se rompió la impresora del pasillo",
-            "fechaCarga": "2017-01-05 11:11:00",
+            "detalle": "por favor arreglar la impresora del pasillo que se rompio hace 5 meses",
+            "fechaCarga": "2017-01-05 11:11",
             "estado": "resuelto",
             "resueltoPor": "ianoliva"
         },
         {
-            "id": "2",
+            "id": "12353",
             "prioridad": "baja",
+            "colorPrioridad": "#33ff0080",
             "user": "manuelvilches",
             "titulo": "se rompió la impresora del pasillo",
             "detalle": "se rompió la impresora del pasillo",
@@ -52,8 +54,9 @@
             "resueltoPor": "ianoliva"
         },
         {
-            "id": "3",
+            "id": "34562",
             "prioridad": "intermedia",
+            "colorPrioridad": "#33ff0080",
             "user": "juancorso",
             "titulo": "se rompió la impresora del pasillo",
             "detalle": "se rompió la impresora del pasillo",
@@ -62,8 +65,9 @@
             "resueltoPor": "ianoliva"
         },
         {
-            "id": "4",
+            "id": "34735654",
             "prioridad": "alta",
+            "colorPrioridad": "#33ff0080",
             "user": "juancorso",
             "titulo": "se rompió la impresora del pasillo",
             "detalle": "se rompió la impresora del pasillo",
@@ -72,8 +76,9 @@
             "resueltoPor": "ianoliva"
         },
         {
-            "id": "5",
+            "id": "745623",
             "prioridad": "intermedia",
+            "colorPrioridad": "#33ff0080",
             "user": "juancorso",
             "titulo": "se rompió la impresora del pasillo",
             "detalle": "se rompió la impresora del pasillo",
