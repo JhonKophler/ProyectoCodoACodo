@@ -20,50 +20,68 @@
   <nav class="navbar-nb"></nav>
 
   <header class="container col-12 row">
-    <h2 class="title col-6 m-auto ">NUEVO TICKET</h2>
-    <form class="row g-3 needs-validation col-6" novalidate>
-      <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Titulo</label>
-        <input type="text" class="form-control" id="validationCustom01" placeholder="Titulo" required>
-        <div class="valid-feedback">
-          Looks good!
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Cargar Ticket
+    </button>
+
+    <!-- Modal -->
+    <div  class="modal fade "   id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+      <div class="modal-dialog modal-dialog-centered modal-xl" data-bs-theme="dark">
+        <div class="modal-content " >
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Ticket</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3 needs-validation col-6" novalidate>
+              <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Titulo</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Titulo" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="Descripcion" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+
+
+              <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Prioridad</label>
+                <select class="form-select" id="validationCustom04" required>
+                  <option selected disabled value="">Prioridad</option>
+                  <option>Alta</option>
+                  <option>Media</option>
+                  <option>Baja</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
+
+
+              <div class="col-12">
+                <button class="btn btn-primary" >Enviar ticket</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">Descripcion</label>
-        <input type="text" class="form-control" id="validationCustom02" placeholder="Descripcion" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-
-
-      <div class="col-md-3">
-        <label for="validationCustom04" class="form-label">Prioridad</label>
-        <select class="form-select" id="validationCustom04" required>
-          <option selected disabled value="">Prioridad</option>
-          <option>Alta</option>
-          <option>Media</option>
-          <option>Baja</option>
-        </select>
-        <div class="invalid-feedback">
-          Please select a valid state.
-        </div>
-      </div>
-
-
-      <div class="col-12">
-        <button class="btn btn-primary" type="submit">Enviar ticket</button>
-      </div>
-    </form>
+    </div>
 
   </header>
 
   <section class="ticket-section">
     <h1 class="title">Tus Tickets</h1>
-
-    <!-- <button id="sort-tickets">Ordenar</button> -->
-
     <div id="cont-tickets" class="container-nb"></div>
   </section>
   <footer></footer>

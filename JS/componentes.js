@@ -68,11 +68,12 @@ function mostrarTickets(tickets) {
           </div>
           <div class="card-body-nb">
               <p id="t-id"> ${ticket.id}</p>
+              <p id="estado">${ticket.estado}</p>
               <p id="t-detalle"> ${ticket.detalle}</p>
           </div>
           <div class="card-footer-nb">
               <p id="t-fechaCarga"> ${ticket.fechaCarga}</p>
-              <p id="estado">${ticket.estado}</p>
+              <button type="submit" class="btn btn-primary"><a href="./ticket-detail.html">Detalles</a></button>
           </div>
       </div>`;
     ticketsDiv.innerHTML += ticketsHTML;
