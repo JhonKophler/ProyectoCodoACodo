@@ -1,5 +1,5 @@
 
-![Logo](./assets/img/TIcketTrack.png)
+![Logo](/assets/img/TicketTrack.png)
 
 
 # TicketTrack
