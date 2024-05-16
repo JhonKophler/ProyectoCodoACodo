@@ -1,5 +1,5 @@
 
-![Logo](/assets/img/TicketTrack.png)
+![Logo](https://github.com/Leonardofsirota/ProyectoCodoACodo/blob/juan/assets/img/TIcketTrack.png)
 
 
 # TicketTrack
