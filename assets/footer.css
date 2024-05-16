@@ -15,12 +15,13 @@ footer {
   height: auto;
   text-align: center;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #321e52de;
   color: white;
   z-index: 99;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-radius: 1rem 1rem 0 0;
 }
 
 footer p:nth-child(1){
@@ -29,8 +30,4 @@ footer p:nth-child(1){
 
 footer p {
   margin: 0 !important;
-}
-
-footer span{
-  color: grey;
 }

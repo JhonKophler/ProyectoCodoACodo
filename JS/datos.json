@@ -1,0 +1,85 @@
+{
+    "usuariosLogin": [
+        {
+            "id": "1",
+            "user": "juancorso",
+            "nombre": "juan",
+            "apellido": "corso",
+            "pass": "123456"
+        },
+        {
+            "id": "2",
+            "user": "angeleslicudis",
+            "nombre": "angeles",
+            "apellido": "licudis",
+            "pass": "123456"
+        },
+        {
+            "id": "3",
+            "user": "ianoliva",
+            "nombre": "ian",
+            "apellido": "oliva",
+            "pass": "123456"
+        }
+    ],
+    "usuariosRandom": [
+        {   "id": "1",
+            "user": "sebastiantacza",
+            "nombre": "juan",
+            "apellido": "tacza",
+            "pass": "123456"
+        }
+    ],
+    "tickets": [
+        {
+            "id": "1",
+            "prioridad": "alta",
+            "user": "juancorso",
+            "titulo": "se rompió la impresora del pasillo",
+            "detalle": "se rompió la impresora del pasillo",
+            "fechaCarga": "2017-01-05 11:11:00",
+            "estado": "resuelto",
+            "resueltoPor": "ianoliva"
+        },
+        {
+            "id": "2",
+            "prioridad": "baja",
+            "user": "manuelvilches",
+            "titulo": "se rompió la impresora del pasillo",
+            "detalle": "se rompió la impresora del pasillo",
+            "fechaCarga": "2017-01-05 11:11:00",
+            "estado": "resuelto",
+            "resueltoPor": "ianoliva"
+        },
+        {
+            "id": "3",
+            "prioridad": "intermedia",
+            "user": "juancorso",
+            "titulo": "se rompió la impresora del pasillo",
+            "detalle": "se rompió la impresora del pasillo",
+            "fechaCarga": "2017-01-05 11:11:00",
+            "estado": "resuelto",
+            "resueltoPor": "ianoliva"
+        },
+        {
+            "id": "4",
+            "prioridad": "alta",
+            "user": "juancorso",
+            "titulo": "se rompió la impresora del pasillo",
+            "detalle": "se rompió la impresora del pasillo",
+            "fechaCarga": "2017-01-05 11:11:00",
+            "estado": "resuelto",
+            "resueltoPor": "ianoliva"
+        },
+        {
+            "id": "5",
+            "prioridad": "intermedia",
+            "user": "juancorso",
+            "titulo": "se rompió la impresora del pasillo",
+            "detalle": "se rompió la impresora del pasillo",
+            "fechaCarga": "2017-01-05 11:11:00",
+            "estado": "resuelto",
+            "resueltoPor": "ianoliva"
+        }
+    ]
+}

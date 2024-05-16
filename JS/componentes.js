@@ -26,13 +26,11 @@ function Navbar() {
       </a>
     </div>
     <div class="nav-links-nb">
+      <a href="../section/user.html"><i class="fa-solid fa-user"></i></a>
       <a href="../index.html">Inicio</a>
-      
       <a href="../section/ticket-crud.html">Ticket</a>
-      
-      <a href="../section/login-register.html">Login</a>
-      
       <a href="../section/about-us.html">Nosotros</a>
+      <a href="../section/support.html">Soporte</a>
     </div>`;
 }
 
@@ -50,6 +48,5 @@ function Navbar() {
 function Footer() {
   var footer = document.getElementsByTagName("footer")[0];
   footer.innerHTML = `<p>Ticket<span>Track</span></p>
-    <p>Soporte de ayuda</p>
-    <p>node.js codo a codo</p>`;
+    <p>Node.js / Buenos Aires Aprende</p>`;
 }
