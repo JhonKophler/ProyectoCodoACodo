@@ -34,7 +34,7 @@
         {
             "id": "1123",
             "prioridad": "alta",
-            "colorPrioridad": "#33ff0080",
+            "colorPrioridad": "red",
             "user": "juancorso",
             "titulo": "se rompió la impresora del pasillo",
             "detalle": "por favor arreglar la impresora del pasillo que se rompio hace 5 meses",
@@ -45,7 +45,7 @@
         {
             "id": "12353",
             "prioridad": "baja",
-            "colorPrioridad": "#33ff0080",
+            "colorPrioridad": "green",
             "user": "manuelvilches",
             "titulo": "se rompió la impresora del pasillo",
             "detalle": "se rompió la impresora del pasillo",
@@ -54,37 +54,69 @@
             "resueltoPor": "ianoliva"
         },
         {
-            "id": "34562",
-            "prioridad": "intermedia",
-            "colorPrioridad": "#33ff0080",
-            "user": "juancorso",
-            "titulo": "se rompió la impresora del pasillo",
-            "detalle": "se rompió la impresora del pasillo",
-            "fechaCarga": "2017-01-05 11:11:00",
+            "id": 6469,
+            "prioridad": "baja",
+            "colorPrioridad": "green",
+            "user": "lsindell0",
+            "titulo": "Error en la conexión",
+            "detalle": "no se puede conectar con el servidor",
+            "fechaCarga": "8/30/2024",
             "estado": "resuelto",
-            "resueltoPor": "ianoliva"
-        },
-        {
-            "id": "34735654",
+            "resueltoPor": "angeleslicudis"
+          },
+          {
+            "id": 5637,
             "prioridad": "alta",
-            "colorPrioridad": "#33ff0080",
-            "user": "juancorso",
-            "titulo": "se rompió la impresora del pasillo",
-            "detalle": "se rompió la impresora del pasillo",
-            "fechaCarga": "2017-01-05 11:11:00",
-            "estado": "resuelto",
+            "colorPrioridad": "red",
+            "user": "ybrayley1",
+            "titulo": "Problema de hardware",
+            "detalle": "Pantalla azul",
+            "fechaCarga": "10/11/2024",
+            "estado": "en revision",
+            "resueltoPor": "angeleslicudis"
+          },
+          {
+            "id": 2847,
+            "prioridad": "media",
+            "colorPrioridad": "yellow",
+            "user": "mcampanelle2",
+            "titulo": "Solicitud de acceso",
+            "detalle": "aun no tengo acceso al sistema",
+            "fechaCarga": "11/16/2024",
+            "estado": "en revision",
             "resueltoPor": "ianoliva"
-        },
-        {
-            "id": "745623",
-            "prioridad": "intermedia",
-            "colorPrioridad": "#33ff0080",
-            "user": "juancorso",
-            "titulo": "se rompió la impresora del pasillo",
-            "detalle": "se rompió la impresora del pasillo",
-            "fechaCarga": "2017-01-05 11:11:00",
+          },
+          {
+            "id": 6622,
+            "prioridad": "alta",
+            "colorPrioridad": "red",
+            "user": "sbeebis3",
+            "titulo": "Revisión de software",
+            "detalle": "Pantalla azul en varias computadoras",
+            "fechaCarga": "5/13/2024",
             "estado": "resuelto",
-            "resueltoPor": "ianoliva"
-        }
+            "resueltoPor": "angeleslicudis"
+          },{
+            "id": 1173,
+            "prioridad": "baja",
+            "colorPrioridad": "green",
+            "user": "mcastagneto0",
+            "titulo": "Revisión de software",
+            "detalle": "se necesita actualizar el software de la computadora",
+            "fechaCarga": "3/7/2024",
+            "estado": "resuelto",
+            "resueltoPor": "angeleslicudis"
+          }, {
+            "id": 7557,
+            "prioridad": "baja",
+            "colorPrioridad": "green",
+            "user": "kilyas1",
+            "titulo": "Problema de hardware",
+            "detalle": "no funciona la tarjeta de red de la computadora de escritorio",
+            "fechaCarga": "2/15/2024",
+            "estado": "en revision",
+            "resueltoPor": "juancorso"
+          }
+
     ]
 }
