@@ -1,9 +1,16 @@
+@import './navbar.css';
+@import './footer.css';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-size: 100%;
+}
+
+p{
+  margin-top: 0!important;
 }
 
 html {
@@ -14,69 +21,16 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  width: 100%;
-  padding: 0 10vw;
-  backdrop-filter: blur(16px) saturate(180%);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  color: white;
-}
-
-.brand-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  font-size: xx-large;
-  font-weight: bolder;
-  color: white; 
-}
-
-.brand-container span {
-  color: gray;
-}
-
-.brand-container img {
-  width: 100px;
-  height: 100%;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.navbar a {
-  display: block;
-  padding: 15px 15px;
-  color: white;
-  text-decoration: none;
-  font-weight: bolder;
-  transition: 0.5s ease;
-}
-
-nav a:hover {
-  background: blueviolet;
-  border-radius: 10%;
-}
-
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  height: 60vh;
+  height: 30vh;
  
 }
-
+/*
 .titulo {
   font-size: 40px;
   text-transform: uppercase;
@@ -88,7 +42,7 @@ nav a:hover {
   color: antiquewhite;
   font-size: 18px;
 }
-
+.titulo {
 /* .ticket-section {
   height: 100vh;
 } */
@@ -167,12 +121,4 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.2);
   padding: 10px 20px;
   border-radius: 10px;
-}
-
-
-footer {
-  text-align: center;
-  padding: 3px;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
 }

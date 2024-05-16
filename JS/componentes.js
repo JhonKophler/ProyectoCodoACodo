@@ -29,7 +29,7 @@ function Navbar() {
     
     <a href="../section/login-register.html">Login</a>
     
-    <a href="../section/contacto.html">Contacto</a>
+    <a href="../section/about-us.html">Nosotros</a>
     </div>`;
 }
 
@@ -40,17 +40,13 @@ function Navbar() {
 
 //   var prioridad = document.getElementsByClassName(".card-header")[0];
 //   console.log(prioridad);
-  
-// }
 
+// }
 
 //componentes
 function Footer() {
   var footer = document.getElementsByTagName("footer")[0];
-  footer.innerHTML = 
-  `<p>Ticket<span>Track</span></p>
+  footer.innerHTML = `<p>Ticket<span>Track</span></p>
     <p>Soporte de ayuda</p>
-    <p>node.js codo a codo</p>
-    <p>ACA ESTA EL CAMBIO NUEVO</p>
-  `;
+    <p>node.js codo a codo</p>`;
 }
