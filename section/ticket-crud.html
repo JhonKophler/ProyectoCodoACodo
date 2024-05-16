@@ -2,19 +2,18 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../assets/ticket.css" />
   <script src="/JS/componentes.js"></script>
   <!-- favicon -->
-  <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon" />
   <!-- animaciones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 </head>
-
 
 <body>
   <nav class="navbar-nb"></nav>
@@ -26,30 +25,27 @@
     </button>
 
     <!-- Modal -->
-    <div  class="modal fade"   id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" data-bs-theme="dark">
-        <div class="modal-content " >
+        <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Ticket</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Nuevo Ticket
+            </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form class="row g-3 needs-validation col-12" novalidate>
               <div class="col-md-4">
                 <label for="validationCustom01" class="form-label">Titulo</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="Titulo" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Titulo" required />
+                <div class="valid-feedback">Looks good!</div>
               </div>
               <div class="col-md-4">
                 <label for="validationCustom02" class="form-label">Descripcion</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Descripcion" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="Descripcion" required />
+                <div class="valid-feedback">Looks good!</div>
               </div>
-
 
               <div class="col-md-3">
                 <label for="validationCustom04" class="form-label">Prioridad</label>
@@ -64,68 +60,67 @@
                 </div>
               </div>
 
-
               <div class="col-12">
-                <button class="btn btn-primary" >Enviar ticket</button>
+                <button class="btn btn-primary">Enviar ticket</button>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
         </div>
       </div>
     </div>
-
   </header>
 
   <section class="ticket-section">
     <h1 class="title">Tus Tickets</h1>
     <div id="cont-tickets" class="container-nb"></div>
   </section>
+
   <footer></footer>
+
+  <!-- js de bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script>
+    Navbar();
+    Footer();
+
+    cargarJSON("/JS/datos.json", function (response) {
+      var datos = JSON.parse(response);
+      mostrarTickets(datos.tickets);
+    });
+
+    (function () {
+      "use strict";
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll(".needs-validation");
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+  </script>
+  <script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
 </body>
-
-
-
-
-<!-- js de bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-<script>
-
-  Navbar();
-  Footer();
-
-  cargarJSON('/JS/datos.json', function (response) {
-    var datos = JSON.parse(response);
-    mostrarTickets(datos.tickets);
-  });
-
-  (function () {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
-
-
-</script>
-<script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
 
 </html>
