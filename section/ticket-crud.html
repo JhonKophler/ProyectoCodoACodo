@@ -65,12 +65,7 @@
               </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-              Cerrar
-            </button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-          </div>
+         
         </div>
       </div>
     </div>
@@ -92,10 +87,8 @@
     Navbar();
     Footer();
 
-    cargarJSON("/JS/datos.json", function (response) {
-      var datos = JSON.parse(response);
-      mostrarTickets(datos.tickets);
-    });
+    cargarTickets();
+    
 
     (function () {
       "use strict";
@@ -119,6 +112,14 @@
         );
       });
     })();
+
+    
+    
+
+   
+    
+
+
   </script>
   <script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
 </body>

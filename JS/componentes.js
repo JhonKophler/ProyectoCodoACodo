@@ -42,25 +42,27 @@ function Footer() {
     <p>Node.js / Buenos Aires Aprende</p>`;
 }
 
-// Función para mostrar los tickets
 
-// Función para cargar el JSON desde un archivo externo
-function cargarJSON(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.overrideMimeType("application/json");
-  xhr.open("GET", url, true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      callback(xhr.responseText);
-    }
-  };
-  xhr.send(null);
+//obtener los tickets del json y mostrarlos 
+
+function cargarTickets() {
+  fetch('/JS/tickets.json')
+    .then(response => {
+      return response.json();
+    })
+    .then(tickets => {
+      mostrarTickets(tickets);
+    })
 }
 
+//funcion para mostrar los tickets html
+
 function mostrarTickets(tickets) {
-  var ticketsDiv = document.getElementById("cont-tickets");
+  var ticketsContainer = document.getElementById("cont-tickets");
+
+  //para cada ticket obtenido del json se crea un html
   tickets.forEach(function (ticket) {
-    var ticketsHTML = `
+    var ticketCard = `
       <div class="card-nb">
           <div class="card-header-nb">
               <p id="t-prioridad">${ticket.prioridad}</p>
@@ -76,7 +78,7 @@ function mostrarTickets(tickets) {
               <button type="submit" class="btn btn-primary"><a href="./ticket-detail.html">Detalles</a></button>
           </div>
       </div>`;
-    ticketsDiv.innerHTML += ticketsHTML;
+    ticketsContainer.innerHTML += ticketCard;
   });
 }
 
