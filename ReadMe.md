@@ -16,21 +16,31 @@ Nuestro sistema de tickets desarrollado en Node.js es una solución eficiente y 
 
 ## Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
+- Creacion de Tickets.
+- Visualizacion de Tickets creados por la gente.
+- Web Responsive.
+- Proyecto realizado con muchas ganas y predisposición por todos los integrantes que participaron.
 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://d1eipm3vz40hy0.cloudfront.net/images/AMER/ticketingsystem22.jpg)
 
 
 ## Tech Stack
 
-**Client:** HTML, CSS, Bootstrap 
+**Client:** HTML, CSS, Bootstrap, Font Awesome, Google Fonts.
 
-**Server:** Node.js 
+**JSON Interno:** Utilizamos un JSON interno para guardar los datos de los participantes del proyecto para mostrarlos en la web, tambien lo usamos para guardar los datos de las personas que crean los tickets.
 
+**Api Weather:** Mostramos el clima en el footer.
 
+**Server:** Funciones internas con JS. A futuro cambiaremos a Node JS.
+
+**Git:** Utilizamos el sistema de controlador de versiones para desarrollar simultaneamente los requerimientos del Trabajo Final Integrador. Usamos tanto la consola de Git como tambien Visual Studio Code y la herramienta Source Tree para resolver conflictos de merge.
+
+## Recursos que creamos para nuestro proyecto
+
+**GMail:** Creamos una cuenta para poder recibir los detalles de cada ticket creado y asi poder enviar una copia al usuario que lo genera.
+
+**JSONBin:** [JSONBin](https://jsonbin.io/) La utilizamos para cargar los Tickets que la gente carga y asi poder traerlos con un fetch desde nuestras funciones y cargar los tikets en [Seccion Tickets] (ruta en donde vamos a desplegar el programa/ruta de tickets)
