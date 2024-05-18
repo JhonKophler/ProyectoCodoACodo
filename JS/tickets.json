@@ -17,7 +17,7 @@
         "user": "manuelvilches",
         "titulo": "se rompió la impresora del pasillo",
         "detalle": "se rompió la impresora del pasillo",
-        "fechaCarga": "2017-01-05 11:11:00",
+        "fechaCarga": "2017-01-05 11:11",
         "estado": "resuelto",
         "resueltoPor": "ianoliva"
     },
@@ -39,7 +39,7 @@
         "user": "ybrayley1",
         "titulo": "Problema de hardware",
         "detalle": "Pantalla azul",
-        "fechaCarga": "2024-10-11",
+        "fechaCarga": "2024-10-11 11:11",
         "estado": "en revision",
         "resueltoPor": "angeleslicudis"
     },
@@ -50,7 +50,7 @@
         "user": "mcampanelle2",
         "titulo": "Solicitud de acceso",
         "detalle": "aun no tengo acceso al sistema",
-        "fechaCarga": "2024-11-16",
+        "fechaCarga": "2024-11-16 11:11",
         "estado": "en revision",
         "resueltoPor": "ianoliva"
     },
@@ -61,7 +61,7 @@
         "user": "sbeebis3",
         "titulo": "Revisión de software",
         "detalle": "Pantalla azul en varias computadoras",
-        "fechaCarga": "2024-05-13",
+        "fechaCarga": "2024-05-13 11:11",
         "estado": "resuelto",
         "resueltoPor": "angeleslicudis"
     },
@@ -72,7 +72,7 @@
         "user": "mcastagneto0",
         "titulo": "Revisión de software",
         "detalle": "se necesita actualizar el software de la computadora",
-        "fechaCarga": "2024-03-07",
+        "fechaCarga": "2024-03-07 11:11",
         "estado": "resuelto",
         "resueltoPor": "angeleslicudis"
     },
@@ -83,7 +83,7 @@
         "user": "kilyas1",
         "titulo": "Problema de hardware",
         "detalle": "no funciona la tarjeta de red de la computadora de escritorio",
-        "fechaCarga": "2024-02-15",
+        "fechaCarga": "2024-02-15 11:11",
         "estado": "en revision",
         "resueltoPor": "juancorso"
     }

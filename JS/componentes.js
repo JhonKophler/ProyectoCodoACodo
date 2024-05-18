@@ -65,17 +65,15 @@ function mostrarTickets(tickets) {
     var ticketCard = `
       <div class="card-nb">
           <div class="card-header-nb">
-              <p id="t-prioridad">${ticket.prioridad}</p>
-              <div style="background: ${ticket.colorPrioridad};" class="card-header-circle-nb"></div>
+            <p id="t-prioridad" style="color: ${ticket.colorPrioridad};font-size:1.2rem;text-transform: capitalize;">${ticket.prioridad}</p>
+            <p id="t-id">Nº ${ticket.id}</p>
           </div>
           <div class="card-body-nb">
-              <p id="t-id"> ${ticket.id}</p>
-              <p id="estado">${ticket.estado}</p>
-              <p id="t-detalle"> ${ticket.detalle}</p>
+            <p id="t-detalle"> ${ticket.detalle}</p>
           </div>
           <div class="card-footer-nb">
-              <p id="t-fechaCarga"> ${ticket.fechaCarga}</p>
-              <button type="submit" class="btn btn-primary"><a href="./ticket-detail.html">Detalles</a></button>
+            <button type="submit" class="btn btn-primary"><a href="./ticket-detail.html">Detalles</a></button>
+            <p id="estado">${ticket.estado}</p>
           </div>
       </div>`;
     ticketsContainer.innerHTML += ticketCard;
