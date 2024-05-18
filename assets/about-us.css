@@ -87,6 +87,7 @@ body {
 .comentario, .servicio{
   font-family: "Roboto", sans-serif;
   font-weight: 100;
+  font-size: small;
   font-style: normal;
 }
 
