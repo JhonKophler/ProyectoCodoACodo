@@ -87,17 +87,6 @@ h3 {
     font-size: 1.5em;
 }
 
-.detail-sidebar {
-    color: #fff;
-    padding: 1em;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(16px) saturate(180%);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    margin-left: 1em;
-}
-
 .detail-options {
     display: flex;
     flex-direction: row;
@@ -120,13 +109,11 @@ h3 {
 }
 
 .detail-options a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: #321e52de;
     backdrop-filter: blur(16px) saturate(180%);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
-    margin-top: 1em;
-    width: 80%;
     text-align: center;
     cursor: pointer;
-
+    color: white;
 }
