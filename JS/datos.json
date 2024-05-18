@@ -29,62 +29,6 @@
             "apellido": "tacza",
             "pass": "123456"
         }
-    ],
-    "tickets": [
-        {
-            "id": "1123",
-            "prioridad": "alta",
-            "colorPrioridad": "#33ff0080",
-            "user": "juancorso",
-            "titulo": "se rompió la impresora del pasillo",
-            "detalle": "por favor arreglar la impresora del pasillo que se rompio hace 5 meses",
-            "fechaCarga": "2017-01-05 11:11",
-            "estado": "resuelto",
-            "resueltoPor": "ianoliva"
-        },
-        {
-            "id": "12353",
-            "prioridad": "baja",
-            "colorPrioridad": "#33ff0080",
-            "user": "manuelvilches",
-            "titulo": "se rompió la impresora del pasillo",
-            "detalle": "se rompió la impresora del pasillo",
-            "fechaCarga": "2017-01-05 11:11:00",
-            "estado": "resuelto",
-            "resueltoPor": "ianoliva"
-        },
-        {
-            "id": "34562",
-            "prioridad": "intermedia",
-            "colorPrioridad": "#33ff0080",
-            "user": "juancorso",
-            "titulo": "se rompió la impresora del pasillo",
-            "detalle": "se rompió la impresora del pasillo",
-            "fechaCarga": "2017-01-05 11:11:00",
-            "estado": "resuelto",
-            "resueltoPor": "ianoliva"
-        },
-        {
-            "id": "34735654",
-            "prioridad": "alta",
-            "colorPrioridad": "#33ff0080",
-            "user": "juancorso",
-            "titulo": "se rompió la impresora del pasillo",
-            "detalle": "se rompió la impresora del pasillo",
-            "fechaCarga": "2017-01-05 11:11:00",
-            "estado": "resuelto",
-            "resueltoPor": "ianoliva"
-        },
-        {
-            "id": "745623",
-            "prioridad": "intermedia",
-            "colorPrioridad": "#33ff0080",
-            "user": "juancorso",
-            "titulo": "se rompió la impresora del pasillo",
-            "detalle": "se rompió la impresora del pasillo",
-            "fechaCarga": "2017-01-05 11:11:00",
-            "estado": "resuelto",
-            "resueltoPor": "ianoliva"
-        }
     ]
+    
 }
