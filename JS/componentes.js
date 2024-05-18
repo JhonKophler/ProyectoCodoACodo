@@ -42,17 +42,16 @@ function Footer() {
     <p>Node.js / Buenos Aires Aprende</p>`;
 }
 
-
-//obtener los tickets del json y mostrarlos 
+//obtener los tickets del json y mostrarlos
 
 function cargarTickets() {
-  fetch('/JS/tickets.json')
-    .then(response => {
+  fetch("/JS/tickets.json")
+    .then((response) => {
       return response.json();
     })
-    .then(tickets => {
+    .then((tickets) => {
       mostrarTickets(tickets);
-    })
+    });
 }
 
 //funcion para mostrar los tickets html
