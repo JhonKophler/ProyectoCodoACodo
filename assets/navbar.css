@@ -11,7 +11,9 @@
     padding: 0 10vw;
     backdrop-filter: blur(16px) saturate(180%);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     color: white;
 }
 
@@ -28,6 +30,7 @@
     justify-content: center;
     align-items: center;
     padding: 0 !important;
+    
 }
 
 .brand-container>a p {
@@ -74,3 +77,46 @@
 i {
     font-size: 1.3rem;
 }
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links-nb {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      gap: 0;
+      padding: 20px;
+      align-items: center;
+      transition: 0.5s ease;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+  
+    .nav-links-nb a {
+      text-align: center;
+      padding: 1rem;
+      width: 50%;
+      color: white;
+      font-size: 1.5rem;
+
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  
+    .nav-links-nb.active {
+      display: flex;
+    }
+  }
