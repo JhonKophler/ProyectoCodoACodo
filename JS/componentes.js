@@ -112,10 +112,18 @@ function cargarTicketsDeleccionado() {
             var ticketArmado = `
               <div class="detail-card">
                 <div class="detail-card-header">
-                
-                    <p style="text-transform: capitalize;"><strong>Prioridad:</strong>${ticket.prioridad}</p>
-                    <p><strong>Ticket Nº:</strong>${ticket.id}</p>
-                    <p><strong>Usuario:</strong>${ticket.user}</p>
+                    <div class="cajaAlineadoraCabecera">
+                      <p style="text-transform: capitalize;"><strong>Prioridad</strong></p>
+                      ${ticket.prioridad}
+                    </div>
+                    <div class="cajaAlineadoraCabecera">
+                      <p><strong>Ticket</strong></p>
+                      Nº ${ticket.id}
+                    </div>
+                    <div class="cajaAlineadoraCabecera">
+                      <p><strong>Usuario</strong></p>
+                      ${ticket.user}
+                    </div>
                     
                 </div>
                 <hr class="border border-primary border-3 opacity-75 w-10">
