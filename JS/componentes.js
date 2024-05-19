@@ -26,6 +26,9 @@ function Navbar() {
         <p>Ticket<span>Track</span></p>
       </a>
     </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
     <div class="nav-links-nb">
       <a href="../section/user.html"><i class="fa-solid fa-user"></i></a>
       <a href="../index.html">Inicio</a>
@@ -34,6 +37,17 @@ function Navbar() {
       <a href="../section/support.html">Soporte</a>
     </div>`;
 }
+
+// navbar toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links-nb');
+
+  navToggle.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+  });
+});
+
 
 //FOOTER
 function Footer() {
