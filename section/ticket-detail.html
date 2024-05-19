@@ -18,40 +18,13 @@
 
 <body>
     <nav class="navbar-nb"></nav>
-
-    <h1 class="section-title">Detalles del ticket</h1>
-    <section class="detail-section">
-        <div class="detail-card">
-            <div class="detail-card-header">
-                <p>Prioridad: <strong>Alta</strong></p>
-                <div class="detail-card-header-circle"></div>
-            </div>
-            <div class="detail-card-body">
-                <p>Creado por: <strong>Nombre</strong></p>
-                <h3>Titulo: se rompió la impresora del pasillo</h3>
-                <p>
-                    <strong>Detalle:</strong>
-                    aca va la descripcion del ticket Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Labore, dicta ducimus. Deleniti,
-                    pariatur, minus suscipit eligendi dolores harum quaerat excepturi,
-                    architecto neque non consequuntur? Necessitatibus quibusdam vel
-                    fugit a laboriosam.
-                </p>
-            </div>
-            <div class="detail-card-footer">
-                <p>hora 12:00 pm</p>
-                <a href="#">Progreso</a>
-            </div>
-        </div>
-        <div class="detail-options">
-            <a href="" class="btn">Terminar</a>
-            <a href="" class="btn">Cancelar</a>
-        </div>
-    </section>
+    <section id="details" class="detail-section"></section>
     <footer></footer>
     <script>
         Navbar();
         Footer();
+
+        cargarTicketsDeleccionado();
     </script>
     <script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
 </body>

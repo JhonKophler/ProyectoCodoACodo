@@ -10,7 +10,16 @@
 }
 
 p {
-    margin-top: 0 !important;
+    margin: 0 !important;
+}
+
+hr {
+    margin: 1rem 0 !important;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 !important;
 }
 
 html {
@@ -21,21 +30,15 @@ body {
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.section-title {
-    font-size: 2.5em;
-    text-align: center;
-    padding: 1rem;
-}
-
 .detail-section {
     display: flex;
-    /* height: 100vh; */
-    flex-direction: column;
-    align-items: center;
+    height: 100%;
+    margin: 1rem;
+    justify-content: center;
 }
 
 .detail-card {
-    width: 60%;
+    width: 90%;
     height: 70%;
     color: #fff;
     padding: 1em;
@@ -53,32 +56,27 @@ body {
 }
 
 .detail-card-header p {
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
-.detail-card-header-circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: red;
-    color: black;
+.cajaAlineadoraCabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .detail-card-body {
-    margin-top: 2em;
     font-size: 1.5rem;
 }
 
-.detail-card-body p,
-h3 {
-    margin-top: 1em;
+.detail-card-body p {
+    margin: 2rem 0 !important;
 }
 
 .detail-card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2em;
     font-size: larger;
 
 }
@@ -116,4 +114,9 @@ h3 {
     text-align: center;
     cursor: pointer;
     color: white;
+}
+
+.botonesAcciones {
+    display: flex;
+    justify-content: space-between;
 }

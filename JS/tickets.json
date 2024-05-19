@@ -1,7 +1,7 @@
 [
     {
         "id": "1123",
-        "prioridad": "alta",
+        "prioridad": "Alta",
         "colorPrioridad": "red",
         "user": "juancorso",
         "titulo": "se rompió la impresora del pasillo",
@@ -12,7 +12,7 @@
     },
     {
         "id": "12353",
-        "prioridad": "baja",
+        "prioridad": "Baja",
         "colorPrioridad": "green",
         "user": "manuelvilches",
         "titulo": "se rompió la impresora del pasillo",
@@ -23,7 +23,7 @@
     },
     {
         "id": 6469,
-        "prioridad": "baja",
+        "prioridad": "Baja",
         "colorPrioridad": "green",
         "user": "lsindell0",
         "titulo": "Error en la conexión",
@@ -34,7 +34,7 @@
     },
     {
         "id": 5637,
-        "prioridad": "alta",
+        "prioridad": "Alta",
         "colorPrioridad": "red",
         "user": "ybrayley1",
         "titulo": "Problema de hardware",
@@ -45,7 +45,7 @@
     },
     {
         "id": 2847,
-        "prioridad": "media",
+        "prioridad": "Media",
         "colorPrioridad": "yellow",
         "user": "mcampanelle2",
         "titulo": "Solicitud de acceso",
@@ -56,7 +56,7 @@
     },
     {
         "id": 6622,
-        "prioridad": "alta",
+        "prioridad": "Alta",
         "colorPrioridad": "red",
         "user": "sbeebis3",
         "titulo": "Revisión de software",
@@ -67,7 +67,7 @@
     },
     {
         "id": 1173,
-        "prioridad": "baja",
+        "prioridad": "Baja",
         "colorPrioridad": "green",
         "user": "mcastagneto0",
         "titulo": "Revisión de software",
@@ -78,7 +78,7 @@
     },
     {
         "id": 7557,
-        "prioridad": "baja",
+        "prioridad": "Baja",
         "colorPrioridad": "green",
         "user": "kilyas1",
         "titulo": "Problema de hardware",
