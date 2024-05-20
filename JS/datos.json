@@ -21,14 +21,5 @@
             "apellido": "oliva",
             "pass": "123456"
         }
-    ],
-    "usuariosRandom": [
-        {   "id": "1",
-            "user": "sebastiantacza",
-            "nombre": "juan",
-            "apellido": "tacza",
-            "pass": "123456"
-        }
     ]
-    
 }

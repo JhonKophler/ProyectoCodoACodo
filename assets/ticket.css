@@ -32,7 +32,7 @@ body {
   position: fixed;
   top: 85px;
   right: -20px;
-  z-index: 100;
+  z-index: 9;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
@@ -144,18 +144,17 @@ body {
   font-size: 30px;
 }
 
-.card-body-nb p:nth-child(2) {
-  font-size: 16px;
-  font-weight: 400;
-  text-align: left;
-}
-
 .card-footer-nb {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  p{
+    font-size: .9rem!important;
+    background-color: #000000cf;
+    border-radius: .5rem;
+    padding: .2rem .7rem;
+  }
 }
-
 
 .btn-t-crud,
 .card-footer-nb a {
