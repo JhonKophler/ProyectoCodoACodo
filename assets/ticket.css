@@ -13,9 +13,9 @@ p {
   margin: 0 !important;
 }
 
-h1{
-  font-size: 1.5rem!important;
-  margin: 0!important;
+h1 {
+  font-size: 1.5rem !important;
+  margin: 0 !important;
 }
 
 html {
@@ -24,6 +24,70 @@ html {
 
 body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.addTicketButton {
+  font-size: 1.2rem;
+  display: flex;
+  position: fixed;
+  top: 85px;
+  right: -20px;
+  z-index: 100;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  opacity: .6;
+  transition: all 0.1s ease-out allow-discrete;
+}
+
+.addTicketButton span {
+  width: 60px;
+  text-align: end;
+  color: #fff;
+  padding: 0 1rem 0 2.5rem;
+  background-color: rgb(121, 19, 189);
+  border-radius: 1rem;
+  user-select:none;
+}
+
+.sombraIcono {
+  border-radius: 1.5rem;
+  position: relative;
+  left: 35px;
+}
+
+.addTicketButton:hover {
+  right: 0px;
+  opacity: 1;
+  span {
+    width: 100%;
+  }
+  i {
+    animation: rotar 1.2s linear infinite;
+  }
+}
+
+.addTicketButton span,
+.sombraIcono {
+  box-shadow: 1px 10px 10px black;
+}
+
+.addTicketButton i {
+  border: 3px solid #7913bd;
+  border-radius: 1.5rem;
+  font-size: 2.4rem;
+  color: rgb(0, 255, 157);
+  animation: rotar 10s linear infinite;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .title {
@@ -97,4 +161,8 @@ body {
 .card-footer-nb a {
   text-decoration: none;
   color: #fff !important;
+}
+
+.fechaAfter::before{
+  content: "Fecha";
 }
