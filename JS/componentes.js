@@ -80,32 +80,33 @@ function obtenerDatosDeJSON(callback) {
 }
 
 //traer los datos de tickets desde jsonBin
-const API_URL = "https://api.jsonbin.io/v3/b/664ad48aacd3cb34a84aa677";
+const API_URL = "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849";
 const X_MASTER_KEY =
   "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e";
 const X_ACCESS_KEY =
   "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e";
 
-// async function obtenerDatosDeApi() {
-//   try {
-//     const response = await fetch(API_URL, {
-//       headers: {
-//         "X-Master-Key": X_MASTER_KEY,
-//         "X-Access-Key": X_ACCESS_KEY,
-//         "Content-Type": "application/json",
-//       },
-//     });
-//     const data = await response.json();
-//     return data.record; // Los datos están bajo la clave 'record' en la respuesta
-//   } catch (error) {
-//     console.error("Error al obtener los datos:", error);
-//   }
-// }
+async function obtenerDatosDeApi() {
+  try {
+    const response = await fetch(API_URL, {
+      headers: {
+        "X-Master-Key": X_MASTER_KEY,
+        "X-Access-Key": X_ACCESS_KEY,
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data.record; // Los datos están bajo la clave 'record' en la respuesta
+  } catch (error) {
+    console.error("Error al obtener los datos:", error);
+  }
+}
 
 // Define la variable global
-let LISTA_TICKETS_GLOBAL = [];
+var LISTA_TICKETS_GLOBAL = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
+  //debugger;
   LISTA_TICKETS_GLOBAL = await obtenerDatosDeApi();
 });
 
@@ -160,7 +161,7 @@ function cargarTicketSeleccionado() {
   const tickets = LISTA_TICKETS_GLOBAL;
   const ticket = tickets.find((t) => t.idTicket == ticketId);
 
-  console.log(ticket);
+  //console.log(ticket);
 
   if (ticket) {
     const ticketDetails = document.getElementById("details");
@@ -267,26 +268,61 @@ function verificarUserID() {
   return userUUID;
 }
 
-function enviarFormulario() {
-  const enviarForm = document.getElementById("submitFormularioModal");
-  const botonFalso2 = document.getElementById("enviarFormularioReal");
+// function enviarFormulario() {
+//   const form = document.getElementById("formTicketModal");
+//   //const enviarForm = document.getElementById("submitFormularioModal");
+//   //enviarForm.click();
+//   form.addEventListener("submit", (event) => {
+//     event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
 
-  botonFalso2.addEventListener("click", (event) => {
-    //enviarForm.click();
-    const form = document.getElementById("formTicketModal");
-    event.preventDefault();
-    const formData = new FormData(form);
-    const data = {
-      //uuid: getUserUUID(),
-      idTicket: formData.get("idTicketCalculado"),
-      idPrioridad: formData.get("idPrioridad"),
-      isEstado: formData.get("idEstado"),
-      user: formData.get("user"),
-      motivo: formData.get("motivo"),
-      detalle: formData.get("detalle"),
-      fechaCarga: new Date().toString(), // Formato de fecha estándar
-      pokeAvatar: formData.get("pokeAvatar"),
-    };
-    console.log("Datos del formulario:", data);
-  });
-}
+//     const formData = new FormData(form);
+//     const jsonData = {
+//       idTicket: formData.get("idTicketCalculado"),
+//       idPrioridad: formData.get("idPrioridad"),
+//       isEstado: formData.get("idEstado"),
+//       user: formData.get("user"),
+//       motivo: formData.get("motivo"),
+//       detalle: formData.get("detalle"),
+//       fechaCarga: new Date().toString(), // Formato de fecha estándar
+//       pokeAvatar: formData.get("pokeAvatar"),
+//     };
+
+//     // fetch(API_URL, {
+//     //   // Reemplaza <ID_DEL_BIN> con tu ID de bin
+//     //   method: "POST",
+//     //   headers: {
+//     //     "X-Master-Key": X_MASTER_KEY,
+//     //     "X-Access-Key": X_ACCESS_KEY,
+//     //     "Content-Type": "application/json",
+//     //   },
+//     //   body: JSON.stringify(jsonData),
+//     // })
+//     //   .then((response) => {
+//     //     if (response.ok) {
+//     //       console.log("Datos enviados correctamente a JSON Bin");
+//     //       // Aquí puedes hacer algo después de enviar los datos exitosamente
+//     //     } else {
+//     //       console.error("Error al enviar los datos a JSON Bin");
+//     //     }
+//     //   })
+//     //   .catch((error) => {
+//     //     console.error("Error de red:", error);
+//     //   });
+
+//     let req = new XMLHttpRequest();
+
+//     req.onreadystatechange = () => {
+//       if (req.readyState == XMLHttpRequest.DONE) {
+//         console.log(req.responseText);
+//       }
+//     };
+
+//     req.open("PUT", "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849", true);
+//     req.setRequestHeader("Content-Type", "application/json");
+//     req.setRequestHeader("X-Master-Key", "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e");
+//     req.setRequestHeader("X-Access-Key", "$2a$10$FBgFsnvZ/YHdl3biVqX2T./t5iBkDKWaazr3JZ1YOvDYLOrXCTw6e");
+//     req.send(JSON.stringify(jsonData));
+
+//     form.submit();
+//   });
+// }

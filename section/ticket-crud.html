@@ -32,7 +32,7 @@
         <div class="modal-body">
 
           <!-- FORMULARIO -->
-          <form id="formTicketModal" class="row g-3 needs-validation" novalidate>
+          <form method="POST" id="formTicketModal" class="row g-3 needs-validation" novalidate>
             <div class="col-md-4 d-none">
               <label for="idTicketCalculado" class="form-label">idTicket</label>
               <input type="text" class="form-control" id="idTicketCalculado" name="idTicketCalculado" value="" required>
@@ -103,8 +103,11 @@
                 Ingrese detalle del pedido
               </div>
             </div>
-            <div class="col-12 d-none">
-              <button class="btn btn-primary" id="submitFormularioModal">enviar formulario</button>
+
+            <!--onclick="enviarFormulario()"-->
+            <div class="col-12">
+              <button class="btn btn-primary"  type="submit"
+                id="submitFormularioModal">enviar formulario</button>
             </div>
           </form>
           <!-- final form -->
@@ -116,8 +119,7 @@
           </div>
           <div>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button onclick="enviarFormulario()" id="enviarFormularioReal" type="button"
-              class="btn btn-primary">Enviar</button>
+            <button type="button" class="btn btn-primary">Enviar</button>
           </div>
         </div>
       </div>
@@ -164,7 +166,7 @@
       } else {
         console.error('LISTA_TICKETS_GLOBAL no está disponible o está vacía');
       }
-    }, 1000);
+    }, 1500);
 
 
     enviarAWebTicket();
@@ -191,6 +193,53 @@
         );
       });
     })();
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("formTicketModal");
+
+      form.addEventListener("submit", (sync) => {
+        event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+
+        const formData = new FormData(form);
+        const jsonData = {
+          userId: "",
+          idTicket: parseInt(formData.get("idTicketCalculado"),16),
+          idPrioridad: parseInt(formData.get("idPrioridad"),16),
+          isEstado: parseInt(formData.get("idEstado"),16),
+          user: formData.get("user"),
+          motivo: formData.get("motivo"),
+          detalle: formData.get("detalle"),
+          fechaCarga: new Date().toISOString(), // Formato de fecha estándar
+          pokeAvatar: formData.get("pokeAvatar"),
+        };
+
+        let req = new XMLHttpRequest();
+
+        req.onreadystatechange = () => {
+          if (req.readyState == XMLHttpRequest.DONE) {
+            if (req.status === 200) {
+              console.log("Datos enviados correctamente a JSON Bin:", req.responseText);
+            } else {
+              console.error("Error al enviar los datos a JSON Bin:", req.status, req.responseText);
+            }
+          }
+        };
+
+        req.open("PUT", "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849", true);
+        req.setRequestHeader("Content-Type", "application/json");
+        req.setRequestHeader("X-Master-Key", "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e");
+        req.setRequestHeader("X-Access-Key", "$2a$10$FBgFsnvZ/YHdl3biVqX2T./t5iBkDKWaazr3JZ1YOvDYLOrXCTw6e");
+        // Obtener los datos actuales
+        const currentData = LISTA_TICKETS_GLOBAL;
+        // Agregar el nuevo ticket a la lista
+        currentData.push(jsonData);
+
+        req.send(JSON.stringify(currentData));        
+      });
+    });
+
+
   </script>
   <script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
 </body>
