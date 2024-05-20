@@ -267,47 +267,61 @@ function verificarUserID() {
   return userUUID;
 }
 
-function enviarFormulario() {
-  const form = document.getElementById("formTicketModal");
-  //const enviarForm = document.getElementById("submitFormularioModal");
-  //enviarForm.click();
-  form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+// function enviarFormulario() {
+//   const form = document.getElementById("formTicketModal");
+//   //const enviarForm = document.getElementById("submitFormularioModal");
+//   //enviarForm.click();
+//   form.addEventListener("submit", (event) => {
+//     event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
 
-    const formData = new FormData(form);
-    const jsonData = {
-      idTicket: formData.get("idTicketCalculado"),
-      idPrioridad: formData.get("idPrioridad"),
-      isEstado: formData.get("idEstado"),
-      user: formData.get("user"),
-      motivo: formData.get("motivo"),
-      detalle: formData.get("detalle"),
-      fechaCarga: new Date().toString(), // Formato de fecha estándar
-      pokeAvatar: formData.get("pokeAvatar"),
-    };
+//     const formData = new FormData(form);
+//     const jsonData = {
+//       idTicket: formData.get("idTicketCalculado"),
+//       idPrioridad: formData.get("idPrioridad"),
+//       isEstado: formData.get("idEstado"),
+//       user: formData.get("user"),
+//       motivo: formData.get("motivo"),
+//       detalle: formData.get("detalle"),
+//       fechaCarga: new Date().toString(), // Formato de fecha estándar
+//       pokeAvatar: formData.get("pokeAvatar"),
+//     };
 
-    fetch(API_URL, {
-      // Reemplaza <ID_DEL_BIN> con tu ID de bin
-      method: "POST",
-      headers: {
-        "X-Master-Key": X_MASTER_KEY,
-        "X-Access-Key": X_ACCESS_KEY,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(jsonData),
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log("Datos enviados correctamente a JSON Bin");
-          // Aquí puedes hacer algo después de enviar los datos exitosamente
-        } else {
-          console.error("Error al enviar los datos a JSON Bin");
-        }
-      })
-      .catch((error) => {
-        console.error("Error de red:", error);
-      });
+//     // fetch(API_URL, {
+//     //   // Reemplaza <ID_DEL_BIN> con tu ID de bin
+//     //   method: "POST",
+//     //   headers: {
+//     //     "X-Master-Key": X_MASTER_KEY,
+//     //     "X-Access-Key": X_ACCESS_KEY,
+//     //     "Content-Type": "application/json",
+//     //   },
+//     //   body: JSON.stringify(jsonData),
+//     // })
+//     //   .then((response) => {
+//     //     if (response.ok) {
+//     //       console.log("Datos enviados correctamente a JSON Bin");
+//     //       // Aquí puedes hacer algo después de enviar los datos exitosamente
+//     //     } else {
+//     //       console.error("Error al enviar los datos a JSON Bin");
+//     //     }
+//     //   })
+//     //   .catch((error) => {
+//     //     console.error("Error de red:", error);
+//     //   });
 
-    form.submit();
-  });
-}
+//     let req = new XMLHttpRequest();
+
+//     req.onreadystatechange = () => {
+//       if (req.readyState == XMLHttpRequest.DONE) {
+//         console.log(req.responseText);
+//       }
+//     };
+
+//     req.open("PUT", "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849", true);
+//     req.setRequestHeader("Content-Type", "application/json");
+//     req.setRequestHeader("X-Master-Key", "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e");
+//     req.setRequestHeader("X-Access-Key", "$2a$10$FBgFsnvZ/YHdl3biVqX2T./t5iBkDKWaazr3JZ1YOvDYLOrXCTw6e");
+//     req.send(JSON.stringify(jsonData));
+
+//     form.submit();
+//   });
+// }
