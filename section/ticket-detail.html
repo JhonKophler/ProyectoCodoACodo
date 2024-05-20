@@ -23,8 +23,15 @@
     <script>
         Navbar();
         Footer();
+        setTimeout(() => {
+            if (typeof LISTA_TICKETS_GLOBAL !== 'undefined' && LISTA_TICKETS_GLOBAL.length > 0) {
 
-        cargarTicketSeleccionado();
+                cargarTicketSeleccionado(LISTA_TICKETS_GLOBAL);
+            } else {
+                console.error('LISTA_TICKETS_GLOBAL no está disponible o está vacía');
+            }
+        }, 1000);
+
     </script>
     <script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
 </body>

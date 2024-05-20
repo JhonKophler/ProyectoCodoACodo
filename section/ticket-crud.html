@@ -18,33 +18,97 @@
 <body>
   <nav class="navbar-nb"></nav>
   <!-- Button trigger modal -->
-  <button style="display: none;" id="modalBoost" type="button" class="btn btn-primary" data-bs-toggle="modal"
-    data-bs-target="#exampleModal">
-  </button>
+  <button style="display: none;" id="botonModal" type="button" class="btn btn-primary" data-bs-toggle="modal"
+    data-bs-target="#exampleModal"></button>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg ">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="idTicketModal"></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Usuario:</label>
-              <input type="text" class="form-control" id="recipient-name">
+
+          <!-- FORMULARIO -->
+          <form id="formTicketModal" class="row g-3 needs-validation" novalidate>
+            <div class="col-md-4 d-none">
+              <label for="idTicketCalculado" class="form-label">idTicket</label>
+              <input type="text" class="form-control" id="idTicketCalculado" name="idTicketCalculado" value="" required>
             </div>
-            <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Asunto:</label>
-              <input type="text" class="form-control" id="recipient-name">
+            <div class="col-md-4 d-none">
+              <label for="idEstado" class="form-label">idEstado</label>
+              <input type="text" class="form-control" id="idEstado" name="idEstado" value="0" required>
             </div>
-            <div class="mb-3">
-              <label for="message-text" class="col-form-label">Descripcion de pedido:</label>
-              <textarea class="form-control" id="message-text"></textarea>
+            <div class="col-md-4">
+              <label for="user" class="form-label">Usuario</label>
+              <input type="text" class="form-control" id="user" name="user" required>
+              <div class="valid-feedback">
+                Completado!
+              </div>
+              <div class="invalid-feedback">
+                Ingrese un usuario.
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="idPrioridad" class="form-label">Prioridad</label>
+              <select class="form-select" id="prioridad" name="idPrioridad" required>
+                <option selected disabled value="">Seleccione</option>
+                <option value="1">Alta</option>
+                <option value="2">Media</option>
+                <option value="3">Baja</option>
+              </select>
+              <div class="valid-feedback">
+                Completado!
+              </div>
+              <div class="invalid-feedback">
+                Seleccione prioridad
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="pokeAvatar" class="form-label">PokeAvatar</label>
+              <select class="form-select" id="pokeAvatar" name="pokeAvatar" required>
+                <option selected disabled value="">Yo te Elijo!</option>
+                <option value="1">pikachu</option>
+                <option value="2">baulbasur</option>
+                <option value="3">charizar</option>
+                <option value="4">snorlax</option>
+              </select>
+              <div class="valid-feedback">
+                Completado!
+              </div>
+              <div class="invalid-feedback">
+                Elija PokeAvatar
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="motivo" class="form-label">Motivo</label>
+              <input type="text" class="form-control" id="validationCustom02" name="motivo" required>
+              <div class="valid-feedback">
+                Completado!
+              </div>
+              <div class="invalid-feedback">
+                Ingrese un motivo.
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="detalle" class="form-label">Descripcion del Pedido</label>
+              <textarea type="text" class="form-control" style="height: 100px" id="detalle" name="detalle"
+                required></textarea>
+              <div class="valid-feedback">
+                Completado!
+              </div>
+              <div class="invalid-feedback">
+                Ingrese detalle del pedido
+              </div>
+            </div>
+            <div class="col-12 d-none">
+              <button class="btn btn-primary" id="submitFormularioModal">enviar formulario</button>
             </div>
           </form>
+          <!-- final form -->
+
         </div>
         <div class="modal-footer" style="justify-content: space-between!important;">
           <div class="fechaAfter">
@@ -52,13 +116,16 @@
           </div>
           <div>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Enviar</button>
+            <button onclick="enviarFormulario()" id="enviarFormularioReal" type="button"
+              class="btn btn-primary">Enviar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <section class="ticket-section">
+
     <div class="addTicketButton">
       <div class="sombraIcono"><i class="fa-solid fa-circle-plus"></i></div>
       <span>Agregar</span>
@@ -66,7 +133,6 @@
 
     <h1 class="title">Tickets Recientes</h1>
     <div id="cont-tickets" class="container-nb"></div>
-
   </section>
 
   <footer></footer>
@@ -79,21 +145,29 @@
   <script>
 
     document.addEventListener("DOMContentLoaded", () => {
-      const customButton = document.querySelector('.addTicketButton');
-      const launchModalButton = document.getElementById('modalBoost');
+      const botonFalso = document.querySelector('.addTicketButton');
+      const abrirModal = document.getElementById('botonModal');
 
-      customButton.addEventListener('click', () => {
-        launchModalButton.click();
+      botonFalso.addEventListener('click', () => {
+        abrirModal.click();
+        obtenerFechaActual();
       });
     });
 
     Navbar();
     Footer();
 
-    obtenerDatosDeJSON(mostrarTickets);
+    setTimeout(() => {
+      if (typeof LISTA_TICKETS_GLOBAL !== 'undefined' && LISTA_TICKETS_GLOBAL.length > 0) {
+        mostrarTickets(LISTA_TICKETS_GLOBAL);
+        insertarUltimoIdTicket(LISTA_TICKETS_GLOBAL);
+      } else {
+        console.error('LISTA_TICKETS_GLOBAL no está disponible o está vacía');
+      }
+    }, 1000);
+
+
     enviarAWebTicket();
-    obtenerFechaActual();
-    obtenerDatosDeJSON(insertarUltimoIdTicket); 
 
     (function () {
       "use strict";
