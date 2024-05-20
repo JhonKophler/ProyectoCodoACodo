@@ -1,0 +1,26 @@
+[
+    {
+        "userId": "",
+        "idTicket": 1,
+        "idPrioridad": 1,
+        "user": "juancorso",
+        "motivo": "se rompió la impresora del pasillo",
+        "detalle": "por favor arreglar la impresora del pasillo que se rompio hace 5 meses",
+        "fechaCarga": "2024-05-10T10:30:00Z",
+        "idEstado": 1,
+        "idUsuarioQueResolvio": 1,
+        "pokeAvatar": ""
+    },
+    {
+        "userId": "",
+        "idTicket": 2,
+        "idPrioridad": 3,
+        "user": "manuelvilches",
+        "motivo": "se rompió la impresora del pasillo",
+        "detalle": "se rompió la impresora del pasillo",
+        "fechaCarga":"2024-05-12T10:30:00Z",
+        "idEstado": 0,
+        "idUsuarioQueResolvio": 3,
+        "pokeAvatar": ""
+    }
+]

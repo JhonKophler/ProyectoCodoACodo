@@ -32,7 +32,7 @@
         <div class="modal-body">
 
           <!-- FORMULARIO -->
-          <form id="formTicketModal" class="row g-3 needs-validation" novalidate>
+          <form  method="POST" id="formTicketModal" class="row g-3 needs-validation" novalidate>
             <div class="col-md-4 d-none">
               <label for="idTicketCalculado" class="form-label">idTicket</label>
               <input type="text" class="form-control" id="idTicketCalculado" name="idTicketCalculado" value="" required>
@@ -103,8 +103,8 @@
                 Ingrese detalle del pedido
               </div>
             </div>
-            <div class="col-12 d-none">
-              <button class="btn btn-primary" id="submitFormularioModal">enviar formulario</button>
+            <div class="col-12">
+              <button class="btn btn-primary" onclick="enviarFormulario()" type="submit" id="submitFormularioModal">enviar formulario</button>
             </div>
           </form>
           <!-- final form -->
@@ -116,7 +116,7 @@
           </div>
           <div>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button onclick="enviarFormulario()" id="enviarFormularioReal" type="button"
+            <button  type="button"
               class="btn btn-primary">Enviar</button>
           </div>
         </div>
@@ -164,7 +164,7 @@
       } else {
         console.error('LISTA_TICKETS_GLOBAL no está disponible o está vacía');
       }
-    }, 1000);
+    }, 1500);
 
 
     enviarAWebTicket();
