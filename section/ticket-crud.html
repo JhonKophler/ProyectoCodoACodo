@@ -106,8 +106,7 @@
 
             <!--onclick="enviarFormulario()"-->
             <div class="col-12">
-              <button class="btn btn-primary"  </button> type="submit"
-                id="submitFormularioModal">enviar formulario</button>
+              <button class="btn btn-primary" type="submit" id="submitFormularioModal">enviar formulario</button>
             </div>
           </form>
           <!-- final form -->
@@ -198,18 +197,19 @@
     document.addEventListener("DOMContentLoaded", () => {
       const form = document.getElementById("formTicketModal");
 
-      form.addEventListener("submit", (event) => {
+      form.addEventListener("submit", (sync) => {
         event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
 
         const formData = new FormData(form);
         const jsonData = {
-          idTicket: formData.get("idTicketCalculado"),
-          idPrioridad: formData.get("idPrioridad"),
-          isEstado: formData.get("idEstado"),
+          userId: "",
+          idTicket: parseInt(formData.get("idTicketCalculado"), 16),
+          idPrioridad: parseInt(formData.get("idPrioridad"), 16),
+          isEstado: parseInt(formData.get("idEstado"), 16),
           user: formData.get("user"),
           motivo: formData.get("motivo"),
           detalle: formData.get("detalle"),
-          fechaCarga: new Date().totring(), // Formato de fecha estándar
+          fechaCarga: new Date().toISOString(), // Formato de fecha estándar
           pokeAvatar: formData.get("pokeAvatar"),
         };
 
@@ -229,8 +229,20 @@
         req.setRequestHeader("Content-Type", "application/json");
         req.setRequestHeader("X-Master-Key", "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e");
         req.setRequestHeader("X-Access-Key", "$2a$10$FBgFsnvZ/YHdl3biVqX2T./t5iBkDKWaazr3JZ1YOvDYLOrXCTw6e");
-        req.send(JSON.stringify(jsonData));
+        // Obtener los datos actuales
+        const currentData = LISTA_TICKETS_GLOBAL;
+        // Agregar el nuevo ticket a la lista
+        currentData.push(jsonData);
+
+        req.send(JSON.stringify(currentData));
+
+
       });
+    });
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      //debugger;
+      LISTA_TICKETS_GLOBAL = await obtenerDatosDeApi();
     });
 
 

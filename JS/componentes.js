@@ -103,9 +103,10 @@ async function obtenerDatosDeApi() {
 }
 
 // Define la variable global
-let LISTA_TICKETS_GLOBAL = [];
+var LISTA_TICKETS_GLOBAL = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
+  //debugger;
   LISTA_TICKETS_GLOBAL = await obtenerDatosDeApi();
 });
 
