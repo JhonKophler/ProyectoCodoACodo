@@ -106,7 +106,8 @@
 
             <!--onclick="enviarFormulario()"-->
             <div class="col-12">
-              <button class="btn btn-primary" type="submit" id="submitFormularioModal">enviar formulario</button>
+              <button class="btn btn-primary"  type="submit"
+                id="submitFormularioModal">enviar formulario</button>
             </div>
           </form>
           <!-- final form -->
@@ -203,9 +204,9 @@
         const formData = new FormData(form);
         const jsonData = {
           userId: "",
-          idTicket: parseInt(formData.get("idTicketCalculado"), 16),
-          idPrioridad: parseInt(formData.get("idPrioridad"), 16),
-          isEstado: parseInt(formData.get("idEstado"), 16),
+          idTicket: parseInt(formData.get("idTicketCalculado"),16),
+          idPrioridad: parseInt(formData.get("idPrioridad"),16),
+          isEstado: parseInt(formData.get("idEstado"),16),
           user: formData.get("user"),
           motivo: formData.get("motivo"),
           detalle: formData.get("detalle"),
@@ -234,15 +235,8 @@
         // Agregar el nuevo ticket a la lista
         currentData.push(jsonData);
 
-        req.send(JSON.stringify(currentData));
-
-
+        req.send(JSON.stringify(currentData));        
       });
-    });
-
-    document.addEventListener("DOMContentLoaded", async () => {
-      //debugger;
-      LISTA_TICKETS_GLOBAL = await obtenerDatosDeApi();
     });
 
 
