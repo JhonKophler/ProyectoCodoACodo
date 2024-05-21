@@ -39,21 +39,22 @@ body {
   text-align: center;
 }
 
-.grilla {
+.nosotros {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  height: 60vh;
+  height: 80vh;
  
 } 
-.nosotros{ 
+.nuestros-servicios{ 
   color: antiquewhite;
   font-size: 18px;
   max-width: 50%;
   text-align: center;
-
+  margin: auto;
+  
 }
 
 .opiniones{
@@ -61,7 +62,8 @@ body {
   margin: auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 40vh;
+  justify-content: center;
   gap: 10rem;
   
 }
@@ -72,10 +74,10 @@ body {
   color: var(--primary color--)
 
 }
-.heading {
+.opinion-head {
   font-size: 25px;
   text-transform: uppercase;
-  color: black;
+  color: rgb(78, 77, 77);
   text-decoration: none;
   text-align: center;
   outline: none;
@@ -83,17 +85,34 @@ body {
   border-radius: 5px;
 }
 
+.servicio{ 
+  color: antiquewhite;
+  font-size: 18px;
+  max-width: 50%;
+  margin: auto;
 
-.comentario, .servicio{
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  font-size: small;
-  font-style: normal;
 }
 
 
-.caja-contenedor{
+.slider-caja {
+  position: relative;
+  overflow-x: scroll;
+  width: 100%;
   display: grid;
+  grid-template-columns: auto;
+}
+
+.slider-caja::-webkit-scrollbar{
+  display: none;
+
+}
+
+.caja-contenedor{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 300px;
   gap: 2rem;
 }
 
@@ -101,10 +120,32 @@ body {
   padding: 2rem;
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1rem;
+  width: 900px;
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   background-color:lightpink;
+}
+
+
+.envoltorio{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5% auto;
+}
+
+#boton-atras, #boton-proximo{
+  width: 50px;
+  cursor: pointer;
+  margin: 40px;
+
+}
+
+.comentario {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: small;
+  font-style: normal;
 }
