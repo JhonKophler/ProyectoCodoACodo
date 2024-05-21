@@ -34,7 +34,7 @@ function Navbar() {
       <a href="../index.html">Inicio</a>
       <a href="../section/ticket-crud.html">Ticket</a>
       <a href="../section/about-us.html">Nosotros</a>
-      <a href="../section/support.html">Soporte</a>
+      <a href="../section/support.html">Faqs</a>
     </div>`;
 }
 
