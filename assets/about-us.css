@@ -30,7 +30,7 @@ body {
   height: 30vh;
  
 }
-
+/*presentamos nuestros servicios*/ 
 .titulo {
   font-size: 50px;
   text-transform: uppercase;
@@ -48,7 +48,7 @@ body {
   height: 60vh;
  
 } 
-.nosotros{ 
+.nosotros { 
   color: antiquewhite;
   font-size: 18px;
   max-width: 50%;
@@ -56,52 +56,127 @@ body {
 
 }
 
+/*seccion de opiniones*/
 .opiniones{
   max-width: 1200px;
   margin: auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
   gap: 10rem;
   
 }
-.h1{
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: var(--primary color--)
 
-}
 .heading {
   font-size: 25px;
   text-transform: uppercase;
-  color: black;
+  color: rgb(78, 77, 77);
   text-decoration: none;
   text-align: center;
   outline: none;
   border: none;
   border-radius: 5px;
+  margin-bottom: 60px;
 }
 
+.h1{
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: rgb(78, 77, 77);
 
-.comentario, .servicio{
-  font-family: "Roboto", sans-serif;
+  /*color: var(--primary color--)*/
+
+}
+
+.servicio{
+  color: antiquewhite;
+  font-size: 25px;
+  text-align: center;
+}
+
+/*boton*/
+.header-btns a {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  color: white;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: 0.5s ease;
+}
+
+.header-btns a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/*seccion de comentarios enviados*/
+
+.comentario {
+  font-family: "Poppins", sans-serif;
   font-weight: 100;
   font-size: small;
   font-style: normal;
 }
 
-
 .caja-contenedor{
-  display: grid;
-  gap: 2rem;
+  position: relative;
 }
 
-.caja{
-  padding: 2rem;
-  display: flex;
-  align-items: flex-start;
+/*flechas*/
+
+.slide-button{
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transform: translateY(50%);
+}
+
+.slide-button#atras{
+  left: -8px;
+}
+
+
+.slide-button#adelante{
+  right: -8px;
+}
+
+.slide-button :hover{
+  background-color: rgba(235, 121, 174, 0.5)
+}
+/*caja de opiniones*/
+
+.caja-contenedor{
+  margin-top: 50px;
+  display: grid;
   gap: 2rem;
+  grid-template-columns: repeat(10, 1fr);
+  width: 1200px;
+  object-fit: cover;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.caja-contenedor::-webkit-scrollbar{
+  display: none;
+}
+
+
+.caja{
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
