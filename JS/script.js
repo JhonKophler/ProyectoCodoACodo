@@ -1,9 +1,9 @@
 const initSlider = () => {
-    const caja = document.querySelector(".caja")
+    const caja = document.querySelector(".caja-contenedor caja")
 
-    const slideButton = document.querySelector(".slide-button")
+    const slideButton = document.querySelector(".caja-contenedor slide-button")
 
-    /*mueve las imagenes según las flechas*/ 
+    //mueve los comentarios según las flechas
 
     slideButton.forEach(button => {
         button.addEventListener("click", () =>{
