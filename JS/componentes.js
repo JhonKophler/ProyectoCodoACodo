@@ -326,3 +326,32 @@ function verificarUserID() {
 //     form.submit();
 //   });
 // }
+
+
+
+
+
+
+
+
+
+//Aqui empieza el slide de comentarios //
+
+const initSlider = () => {
+  const caja = document.querySelector(".caja .usuario");
+
+  const slideButtons = document.querySelector(".caja .slide-button");
+
+  //mueve los comentarios según las flechas
+
+  slideButtons.forEach(button => {
+      button.addEventListener("click", () =>{
+          const direction  = button.id === "atras" ? -1 : 1;
+          const scrollAmount = caja.clientWidth * direction;
+          caja.scrollBy({left: scrollAmount, behavior: "smooth"});
+      })
+  });
+}
+
+
+window.addEventListener("load", initSlider);
