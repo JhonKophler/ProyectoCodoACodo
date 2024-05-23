@@ -338,20 +338,40 @@ function verificarUserID() {
 //Aqui empieza el slide de comentarios //
 
 const initSlider = () => {
-  const caja = document.querySelector(".caja .usuario");
+  const caja = document.querySelector(".caja-contenedor .caja");
 
-  const slideButtons = document.querySelector(".caja .slide-button");
+  const slideButtons = document.querySelectorAll(".caja-contenedor .slide-button");
 
   //mueve los comentarios según las flechas
 
   slideButtons.forEach(button => {
-      button.addEventListener("click", () =>{
+      button.addEventListener("click", () => {
           const direction  = button.id === "atras" ? -1 : 1;
           const scrollAmount = caja.clientWidth * direction;
-          caja.scrollBy({left: scrollAmount, behavior: "smooth"});
-      })
+          caja.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
   });
 }
 
 
 window.addEventListener("load", initSlider);
+
+//Api de clima en Nosotros
+
+let key = "fae56571493a445c18bb37686ef46ad0";
+let ciudad = document.getElementById("city");
+let button = document.getElementById("btn-w");
+let resultado = document.getElementById("resultado");
+
+let get_weather = () => {
+  let city_name = ciudad.value;
+  let url = "https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric";
+  fetch(url).(then(resp) => resp.json()).then(data =>{
+    console.log("La temperatura es" + (data.temp.main) + "°");
+    resultado.innerHTML = <h2>$(data.name)</h2>;
+    <h3>$(data.temp)</h3>
+  })
+
+
+}
+boton.addEventListener("click", get_Weather);

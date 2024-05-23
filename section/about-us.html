@@ -23,14 +23,18 @@
 <body>
   <nav class="navbar-nb"></nav>
 
+<!--Consumimos una Api de Clima-->
+  <section class="clima">
+  <input type="text" placeholder="Ingrese su ciudad" id="city" value="">
+  <button id="btn-w">Temperatura en tu ciudad</button>
+  <div class="resultado"></div>
+  </section>
 <!--una breve descripción del servicio y porque usar esta página, también agrego la opción de comentarios de usuarios-->
-
   <header class="header">
     <h2><a href="#" class="titulo">NOSOTROS</a></h2>
 
     <!-- <img src="https://raw.githubusercontent.com/Leonardofsirota/ProyectoCodoACodo/juan/assets/img/TIcketTrack.png?token=GHSAT0AAAAAACR6IEAPUVWYLC74KQSW2UU6ZSFSDIA" alt=""> -->
   </header>
-
 
   <section class="grilla">
       <p class="nosotros">
@@ -66,14 +70,16 @@
   </div>
   
 <!--empiezo a realizar cajas con comentarios-->
-    <div class="caja-contenedor">
+  <div class="container">
 
-    <button id="atras" class="slide-button material-symbol-rounded">
-      <span class="material-symbols-outlined">
-        chevron_right
-        </span></button>
+  <div class="caja-contenedor">
 
-      <div class="caja">
+      <button id="atras" class="slide-button material-symbol-rounded">
+        <span class="material-symbols-outlined">
+          chevron_right
+          </span></button>
+
+      <div class="caja">     
         <span><i class="fa-solid fa-pen-clip"></i></span>
         <div class="usuario">
           <h3>María</h3>
@@ -170,13 +176,12 @@
             Muy recomendable por la facilidad de ingresar para reclamo y la rápida respuesta. Estoy muy conforme y la recomendaría.
           </div>
         </div>
+        </div>
+        <button id="adelante" class="slide-button material-symbol-rounded">
+          <span class="material-symbols-outlined">
+            chevron_left
+            </span></button>
       </div>
-
-      <button id="adelante" class="slide-button material-symbol-rounded">
-        <span class="material-symbols-outlined">
-          chevron_left
-          </span></button>
-
     </div>
 
   </section>
