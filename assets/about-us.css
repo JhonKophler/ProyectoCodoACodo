@@ -46,30 +46,32 @@ body {
   flex-direction: column;
   gap: 2rem;
   height: 60vh;
- 
+  margin-bottom: 60px;
 } 
+
 .nosotros { 
   color: antiquewhite;
-  font-size: 18px;
-  max-width: 50%;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  max-width: 60%;
   text-align: center;
-
+  font-family: "Poppins", sans-serif;
 }
 
 /*seccion de opiniones*/
 .opiniones{
-  max-width: 1200px;
-  margin: auto;
-  padding: 1rem;
-  display: grid;
-  grid-template-rows: auto;
-  gap: 10rem;
   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  /*height: 60vh;*/
+  margin-bottom: 60px;
 }
 
 .heading {
   font-size: 25px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   color: rgb(78, 77, 77);
   text-decoration: none;
   text-align: center;
@@ -80,7 +82,7 @@ body {
 }
 
 .h1{
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   font-size: 2.5rem;
   font-weight: 500;
   color: rgb(78, 77, 77);
@@ -93,9 +95,12 @@ body {
   color: antiquewhite;
   font-size: 25px;
   text-align: center;
+  margin-bottom: 40px;
+  font-family: "Poppins", sans-serif;
+
 }
 
-/*boton*/
+/*boton para contacto*/
 .header-btns a {
   margin-top: 40px;
   margin-bottom: 50px;
