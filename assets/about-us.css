@@ -28,7 +28,7 @@ body {
   gap: 3rem;
   color: antiquewhite;
 }
-
+/*
 #btn-w {
   margin-top: 40px;
   margin-bottom: 50px;
@@ -46,7 +46,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
-
+*/
 
 .header {
   display: flex;

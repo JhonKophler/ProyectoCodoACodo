@@ -360,19 +360,17 @@ window.addEventListener("load", initSlider);
 
 let key = "fae56571493a445c18bb37686ef46ad0";
   let ciudad = document.getElementById("city");
-  let button = document.getElementById("btn-w");
+  let boton = document.getElementById("btn-w");
   let resultado = document.getElementById("resultado");
 
 let get_weather = () => {
   let city_name = ciudad.value;
-  let url = "https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric"
-  fetch(url).then((resp) => resp.json()).then(data =>{
-    console.log("La temperatura es" + (data.temp.main[0]) + "°");
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric`
+  fetch(url).then((resp) => resp.json()).then(data => {
+    console.log("La temperatura es" + (data.temp.main) + "°");
     console.log(data);
+    resultado.innerHTML = `<h3>${data.name} + ${data.temp.main} </h3>`
 
-    resultado.innerHTML = "<h3>$(data.name)<h3> 
-    <h3>${data.temp.main[0]}</h3>"
-  
   });
 
 }
