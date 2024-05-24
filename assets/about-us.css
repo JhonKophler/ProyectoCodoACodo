@@ -26,6 +26,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 3rem;
+  margin: 50px;
   color: antiquewhite;
 }
 /*

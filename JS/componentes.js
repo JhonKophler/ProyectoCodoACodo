@@ -338,7 +338,7 @@ function verificarUserID() {
 //Aqui empieza el slide de comentarios 
 
 const initSlider = () => {
-  const caja = document.querySelector(".caja-contenedor .caja");
+  const caja = document.querySelector(".container .caja-contenedor");
 
   const slideButtons = document.querySelectorAll(".caja-contenedor .slide-button");
 
@@ -354,7 +354,7 @@ const initSlider = () => {
 }
 
 
-window.addEventListener("load", initSlider);
+.addEventListener("load", initSlider);
 
 //Api de clima en Nosotros
 
@@ -369,7 +369,8 @@ let get_weather = () => {
   fetch(url).then((resp) => resp.json()).then(data => {
     console.log("La temperatura es" + (data.temp.main) + "°");
     console.log(data);
-    resultado.innerHTML = `<h3>${data.name} + ${data.temp.main} </h3>`
+    resultado.innerHTML = `<h3>${data.name}</h3>
+    <h3>${data.temp.main}</h3>`
 
   });
 
