@@ -86,17 +86,18 @@ const X_MASTER_KEY =
 const X_ACCESS_KEY =
   "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e";
 
-async function obtenerDatosDeApi() {
+async function obtenerDatosDeApi(n) {
   try {
-    const response = await fetch(API_URL, {
+    var response = await fetch(API_URL, {
       headers: {
         "X-Master-Key": X_MASTER_KEY,
         "X-Access-Key": X_ACCESS_KEY,
         "Content-Type": "application/json",
       },
     });
-    const data = await response.json();
-    return data.record; // Los datos están bajo la clave 'record' en la respuesta
+    var data = await response.json();
+    n = data.record;
+    return LISTA_TICKETS_GLOBAL = n; // Los datos están bajo la clave 'record' en la respuesta
   } catch (error) {
     console.error("Error al obtener los datos:", error);
   }
@@ -104,11 +105,7 @@ async function obtenerDatosDeApi() {
 
 // Define la variable global
 var LISTA_TICKETS_GLOBAL = [];
-
-document.addEventListener("DOMContentLoaded", async () => {
-  //debugger;
-  LISTA_TICKETS_GLOBAL = await obtenerDatosDeApi();
-});
+var TICKET_ELEGIDO = 0;
 
 //funcion para mostrar los tickets html
 function mostrarTickets(lista) {
@@ -145,26 +142,26 @@ function mostrarTickets(lista) {
 }
 
 function enviarAWebTicket() {
-  const ticketsContainer = document.getElementById("cont-tickets");
+  let ticketsContainer = document.getElementById("cont-tickets");
   ticketsContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("cargarHtml")) {
-      const varTicketId = event.target.getAttribute("data-id");
+      let varTicketId = event.target.getAttribute("data-id");
       window.location.href = `/section/ticket-detail.html?idTicket=${varTicketId}`;
     }
   });
 }
 
 //funcion para Cargar "section/ticket-detail.html" con la info del ticket seleccionado
-function cargarTicketSeleccionado() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const ticketId = urlParams.get("idTicket");
-  const tickets = LISTA_TICKETS_GLOBAL;
-  const ticket = tickets.find((t) => t.idTicket == ticketId);
+function cargarTicketSeleccionado(n) {
+  var urlParams = new URLSearchParams(window.location.search);
+  var ticketId = urlParams.get("idTicket");
+  var tickets = n;
+  var ticket = tickets.find((t) => t.idTicket == ticketId);
 
-  //console.log(ticket);
+  console.log(ticket);
 
   if (ticket) {
-    const ticketDetails = document.getElementById("details");
+    var ticketDetails = document.getElementById("details");
     var ticketArmado = `
           <div class="detail-card">
             <div class="detail-card-header">
@@ -247,9 +244,9 @@ function insertarUltimoIdTicket(tickets) {
   // Ordenamos con SORT
   tickets.sort((a, b) => new Date(b.fechaCarga) - new Date(a.fechaCarga));
 
-  const divIdTicketElement = document.getElementById("idTicketModal");
-  const inputFormIdTicket = document.getElementById("idTicketCalculado");
-  const ticketCalculado = parseInt(tickets[0].idTicket) + 1;
+  var divIdTicketElement = document.getElementById("idTicketModal");
+  var inputFormIdTicket = document.getElementById("idTicketCalculado");
+  var ticketCalculado = parseInt(tickets.idTicket) + 1;
 
   divIdTicketElement.innerHTML = "Ticket Nº " + ticketCalculado;
   inputFormIdTicket.value = ticketCalculado.toString();

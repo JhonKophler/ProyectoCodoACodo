@@ -106,8 +106,7 @@
 
             <!--onclick="enviarFormulario()"-->
             <div class="col-12">
-              <button class="btn btn-primary"  type="submit"
-                id="submitFormularioModal">enviar formulario</button>
+              <button class="btn btn-primary" type="submit" id="submitFormularioModal">enviar formulario</button>
             </div>
           </form>
           <!-- final form -->
@@ -159,15 +158,12 @@
     Navbar();
     Footer();
 
-    setTimeout(() => {
-      if (typeof LISTA_TICKETS_GLOBAL !== 'undefined' && LISTA_TICKETS_GLOBAL.length > 0) {
-        mostrarTickets(LISTA_TICKETS_GLOBAL);
-        insertarUltimoIdTicket(LISTA_TICKETS_GLOBAL);
-      } else {
-        console.error('LISTA_TICKETS_GLOBAL no está disponible o está vacía');
-      }
-    }, 1500);
-
+    document.addEventListener("DOMContentLoaded", async () => {
+      //debugger;
+      LISTA_TICKETS_GLOBAL = await obtenerDatosDeApi();
+      mostrarTickets(LISTA_TICKETS_GLOBAL);
+      insertarUltimoIdTicket(LISTA_TICKETS_GLOBAL);
+    });
 
     enviarAWebTicket();
 
@@ -204,13 +200,14 @@
         const formData = new FormData(form);
         const jsonData = {
           userId: "",
-          idTicket: parseInt(formData.get("idTicketCalculado"),16),
-          idPrioridad: parseInt(formData.get("idPrioridad"),16),
-          isEstado: parseInt(formData.get("idEstado"),16),
+          idTicket: parseInt(formData.get("idTicketCalculado"), 16),
+          idPrioridad: parseInt(formData.get("idPrioridad"), 16),
+          isEstado: parseInt(formData.get("idEstado"), 16),
           user: formData.get("user"),
           motivo: formData.get("motivo"),
           detalle: formData.get("detalle"),
           fechaCarga: new Date().toISOString(), // Formato de fecha estándar
+          idUsuarioQueResolvio: null,
           pokeAvatar: formData.get("pokeAvatar"),
         };
 
@@ -235,7 +232,10 @@
         // Agregar el nuevo ticket a la lista
         currentData.push(jsonData);
 
-        req.send(JSON.stringify(currentData));        
+        req.send(JSON.stringify(currentData));
+
+        setTimeout(function () { console.log('hola') });
+
       });
     });
 
