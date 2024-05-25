@@ -22,5 +22,41 @@
         "idEstado": 0,
         "idUsuarioQueResolvio": 3,
         "pokeAvatar": ""
+    },
+    {
+        "userId": "",
+        "idTicket": 3,
+        "idPrioridad": 2,
+        "user": "manuelvilches",
+        "motivo": "se rompió la impresora del pasillo",
+        "detalle": "se rompió la impresora del pasillo",
+        "fechaCarga":"2024-05-14T10:30:00Z",
+        "idEstado": 0,
+        "idUsuarioQueResolvio": 3,
+        "pokeAvatar": ""
+    }
+    ,{
+        "userId": "",
+        "idTicket": 4,
+        "idPrioridad": 2,
+        "user": "manuelvilches",
+        "motivo": "se rompió la impresora del pasillo",
+        "detalle": "se rompió la impresora del pasillo",
+        "fechaCarga":"2024-05-20T10:30:00Z",
+        "idEstado": 0,
+        "idUsuarioQueResolvio": 3,
+        "pokeAvatar": ""
+    },
+    {
+        "userId": "",
+        "idTicket": 5,
+        "idPrioridad": 1,
+        "user": "manuelvilches",
+        "motivo": "se rompió la impresora del pasillo",
+        "detalle": "se rompió la impresora del pasillo",
+        "fechaCarga":"2024-05-02T10:30:00Z",
+        "idEstado": 0,
+        "idUsuarioQueResolvio": 3,
+        "pokeAvatar": ""
     }
 ]

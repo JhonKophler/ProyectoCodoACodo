@@ -70,42 +70,16 @@ const estadoTicketID = {
 
 //obtener los tickets del json y mostrarlos
 function obtenerDatosDeJSON(callback) {
-  fetch("/JS/datos.json")
-    .then((response) => {
-      return response.json();
-    })
+  fetch("/JS/tickets.json")
+    .then((response) => response.json())
     .then((tickets) => {
       callback(tickets);
+    })
+    .catch((error) => {
+      console.error("Error al obtener los datos del JSON:", error);
+      callback([]); // Devolver una lista vacía en caso de error
     });
 }
-
-//traer los datos de tickets desde jsonBin
-const API_URL = "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849";
-const X_MASTER_KEY =
-  "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e";
-const X_ACCESS_KEY =
-  "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e";
-
-async function obtenerDatosDeApi(n) {
-  try {
-    var response = await fetch(API_URL, {
-      headers: {
-        "X-Master-Key": X_MASTER_KEY,
-        "X-Access-Key": X_ACCESS_KEY,
-        "Content-Type": "application/json",
-      },
-    });
-    var data = await response.json();
-    n = data.record;
-    return LISTA_TICKETS_GLOBAL = n; // Los datos están bajo la clave 'record' en la respuesta
-  } catch (error) {
-    console.error("Error al obtener los datos:", error);
-  }
-}
-
-// Define la variable global
-var LISTA_TICKETS_GLOBAL = [];
-var TICKET_ELEGIDO = 0;
 
 //funcion para mostrar los tickets html
 function mostrarTickets(lista) {
@@ -151,12 +125,12 @@ function enviarAWebTicket() {
   });
 }
 
+
 //funcion para Cargar "section/ticket-detail.html" con la info del ticket seleccionado
-function cargarTicketSeleccionado(n) {
+function cargarTicketSeleccionado(lista) {
   var urlParams = new URLSearchParams(window.location.search);
   var ticketId = urlParams.get("idTicket");
-  var tickets = n;
-  var ticket = tickets.find((t) => t.idTicket == ticketId);
+  var ticket = lista.find((t) => t.idTicket == ticketId);
 
   console.log(ticket);
 
@@ -240,136 +214,36 @@ function obtenerFechaActual() {
 }
 
 //Espera una lista de tickets asi los acomoda y trae el ultimo primero
-function insertarUltimoIdTicket(tickets) {
+function calcularUltimoIdTicket(tickets) {
+
   // Ordenamos con SORT
-  tickets.sort((a, b) => new Date(b.fechaCarga) - new Date(a.fechaCarga));
+  tickets.sort((a, b) => new Date(b.idTicket) - new Date(a.idTicket));
 
   var divIdTicketElement = document.getElementById("idTicketModal");
   var inputFormIdTicket = document.getElementById("idTicketCalculado");
-  var ticketCalculado = parseInt(tickets.idTicket) + 1;
+  var ticketCalculado = parseInt(tickets[0].idTicket) + 1;
 
   divIdTicketElement.innerHTML = "Ticket Nº " + ticketCalculado;
   inputFormIdTicket.value = ticketCalculado.toString();
 }
 
-function generarUserID() {
-  return crypto.randomUUID();
-}
-
-function verificarUserID() {
-  let userUUID = localStorage.getItem("userUUID");
-  if (!userUUID) {
-    userUUID = generateUUID();
-    localStorage.setItem("userUUID", userUUID);
-  }
-  return userUUID;
-}
-
-// function enviarFormulario() {
-//   const form = document.getElementById("formTicketModal");
-//   //const enviarForm = document.getElementById("submitFormularioModal");
-//   //enviarForm.click();
-//   form.addEventListener("submit", (event) => {
-//     event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
-
-//     const formData = new FormData(form);
-//     const jsonData = {
-//       idTicket: formData.get("idTicketCalculado"),
-//       idPrioridad: formData.get("idPrioridad"),
-//       isEstado: formData.get("idEstado"),
-//       user: formData.get("user"),
-//       motivo: formData.get("motivo"),
-//       detalle: formData.get("detalle"),
-//       fechaCarga: new Date().toString(), // Formato de fecha estándar
-//       pokeAvatar: formData.get("pokeAvatar"),
-//     };
-
-//     // fetch(API_URL, {
-//     //   // Reemplaza <ID_DEL_BIN> con tu ID de bin
-//     //   method: "POST",
-//     //   headers: {
-//     //     "X-Master-Key": X_MASTER_KEY,
-//     //     "X-Access-Key": X_ACCESS_KEY,
-//     //     "Content-Type": "application/json",
-//     //   },
-//     //   body: JSON.stringify(jsonData),
-//     // })
-//     //   .then((response) => {
-//     //     if (response.ok) {
-//     //       console.log("Datos enviados correctamente a JSON Bin");
-//     //       // Aquí puedes hacer algo después de enviar los datos exitosamente
-//     //     } else {
-//     //       console.error("Error al enviar los datos a JSON Bin");
-//     //     }
-//     //   })
-//     //   .catch((error) => {
-//     //     console.error("Error de red:", error);
-//     //   });
-
-//     let req = new XMLHttpRequest();
-
-//     req.onreadystatechange = () => {
-//       if (req.readyState == XMLHttpRequest.DONE) {
-//         console.log(req.responseText);
-//       }
-//     };
-
-//     req.open("PUT", "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849", true);
-//     req.setRequestHeader("Content-Type", "application/json");
-//     req.setRequestHeader("X-Master-Key", "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e");
-//     req.setRequestHeader("X-Access-Key", "$2a$10$FBgFsnvZ/YHdl3biVqX2T./t5iBkDKWaazr3JZ1YOvDYLOrXCTw6e");
-//     req.send(JSON.stringify(jsonData));
-
-//     form.submit();
-//   });
-// }
-
-
-
-
-
-
-
-
-
-//Aqui empieza el slide de comentarios 
-
-//const initSlider = () => {
-//  const caja = document.querySelector(".container .caja-contenedor");
-
- // const slideButtons = document.querySelectorAll(".caja-contenedor .slide-button");
-
-//mueve los comentarios según las flechas
-
- // slideButtons.forEach(button => {
- //     button.addEventListener("click", () => {
- //         const direction  = button.id === "atras" ? -1 : 1;
-//          const scrollAmount = caja.clientWidth * direction;
-//          caja.scrollBy({left: scrollAmount, behavior: "smooth" });
-//     });
-// });
-//}
-
-
-//window.addEventListener("load", initSlider);
-
-//Api de clima en Nosotros
+////////////////////////////////////////////////////////////////////
 
 let key = "fae56571493a445c18bb37686ef46ad0";
-  let ciudad = document.getElementById("city");
-  let boton = document.getElementById("btn-w");
-  let resultado = document.getElementById("resultado");
+let ciudad = document.getElementById("city");
+let boton = document.getElementById("btn-w");
+let resultado = document.getElementById("resultado");
 
 let get_weather = () => {
   let city_name = ciudad.value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric`
-  fetch(url).then((resp) => resp.json()).then(data => {
-    console.log("La temperatura es" + (data.temp.main) + "°");
-    console.log(data);
-    resultado.innerHTML = `<h3>${data.name}</h3>
-    <h3>${data.temp.main}</h3>`
-
-  });
-
-}
-boton.addEventListener("click", get_weather);
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric`;
+  fetch(url)
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log("La temperatura es" + data.temp.main + "°");
+      console.log(data);
+      resultado.innerHTML = `<h3>${data.name}</h3>
+    <h3>${data.temp.main}</h3>`;
+    });
+};
+//boton.addEventListener("click", get_weather);

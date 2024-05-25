@@ -158,12 +158,8 @@
     Navbar();
     Footer();
 
-    document.addEventListener("DOMContentLoaded", async () => {
-      //debugger;
-      LISTA_TICKETS_GLOBAL = await obtenerDatosDeApi();
-      mostrarTickets(LISTA_TICKETS_GLOBAL);
-      insertarUltimoIdTicket(LISTA_TICKETS_GLOBAL);
-    });
+    obtenerDatosDeJSON(mostrarTickets);
+    obtenerDatosDeJSON(calcularUltimoIdTicket);
 
     enviarAWebTicket();
 
@@ -210,32 +206,6 @@
           idUsuarioQueResolvio: null,
           pokeAvatar: formData.get("pokeAvatar"),
         };
-
-        let req = new XMLHttpRequest();
-
-        req.onreadystatechange = () => {
-          if (req.readyState == XMLHttpRequest.DONE) {
-            if (req.status === 200) {
-              console.log("Datos enviados correctamente a JSON Bin:", req.responseText);
-            } else {
-              console.error("Error al enviar los datos a JSON Bin:", req.status, req.responseText);
-            }
-          }
-        };
-
-        req.open("PUT", "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849", true);
-        req.setRequestHeader("Content-Type", "application/json");
-        req.setRequestHeader("X-Master-Key", "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e");
-        req.setRequestHeader("X-Access-Key", "$2a$10$FBgFsnvZ/YHdl3biVqX2T./t5iBkDKWaazr3JZ1YOvDYLOrXCTw6e");
-        // Obtener los datos actuales
-        const currentData = LISTA_TICKETS_GLOBAL;
-        // Agregar el nuevo ticket a la lista
-        currentData.push(jsonData);
-
-        req.send(JSON.stringify(currentData));
-
-        setTimeout(function () { console.log('hola') });
-
       });
     });
 
