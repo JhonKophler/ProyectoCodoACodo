@@ -211,7 +211,7 @@ function calcularUltimoIdTicket(tickets) {
 }
 
 ////////////////////////////////////////////////////////////////////
-
+//Api de clima
 document.addEventListener('DOMContentLoaded', function() {
 let key = "fae56571493a445c18bb37686ef46ad0";
 let ciudad = document.getElementById("city");
