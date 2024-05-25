@@ -125,7 +125,6 @@ function enviarAWebTicket() {
   });
 }
 
-
 //funcion para Cargar "section/ticket-detail.html" con la info del ticket seleccionado
 function cargarTicketSeleccionado(lista) {
   var urlParams = new URLSearchParams(window.location.search);
@@ -215,7 +214,6 @@ function obtenerFechaActual() {
 
 //Espera una lista de tickets asi los acomoda y trae el ultimo primero
 function calcularUltimoIdTicket(tickets) {
-
   // Ordenamos con SORT
   tickets.sort((a, b) => new Date(b.idTicket) - new Date(a.idTicket));
 
@@ -247,3 +245,51 @@ let get_weather = () => {
     });
 };
 //boton.addEventListener("click", get_weather);
+
+function tomarDatosDelForm(form) {
+  // Recolectar los datos del formulario
+  const formData = new FormData(form);
+  const jsonData = {
+    userId: "",
+    idTicket: parseInt(formData.get("idTicketCalculado"), 16),
+    idPrioridad: parseInt(formData.get("idPrioridad"), 16),
+    isEstado: parseInt(formData.get("idEstado"), 16),
+    user: formData.get("user"),
+    motivo: formData.get("motivo"),
+    detalle: formData.get("detalle"),
+    fechaCarga: new Date().toISOString(), // Formato de fecha estándar
+    idUsuarioQueResolvio: null,
+    pokeAvatar: formData.get("pokeAvatar"),
+  };
+
+  // Devolver los datos como JSON string
+  return jsonData;
+}
+
+function mostrarTicketCreadoRecien(paqueteDatos) {
+  const divDatos = document.getElementById("modalPadre");
+
+  divDatos.innerHTML = `<div class="card mb-3" style="width: 500px;user-select: none;">
+  <div class="row g-0">
+    <div class="col-md-4 card-dentro-del-modal">
+    </div>
+    <div class="col-md-8" style="display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;" >
+      <div class="card-body">
+        <h5 class="card-title">😁Ticket Enviado Exitosamente!</h5>
+        <p class="card-text">Gracias ${paqueteDatos.user} por confiar en nosotros!</p>
+        <p class="card-text"><small class="text-body-secondary">En los proximos dias recibiras noticias de tu ticket</small></p>
+      </div>
+    </div>
+  </div>
+</div>`; // Mostrar los datos en el div
+
+  // Cerrar el div después de 4 segundos
+  setTimeout(function () {
+    divDatos.style.display = "none";
+
+    // Simular envío de formulario y redirigir a tickets.html
+    window.location.href = "ticket-crud.html";
+  }, 4000);
+}
