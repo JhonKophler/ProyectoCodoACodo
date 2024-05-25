@@ -1,7 +1,9 @@
 @import './footer.css';
 @import './navbar.css';
 
-*/* Estilos base */
+*
+
+/* Estilos base */
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +17,9 @@ html {
 
 body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Header */
@@ -64,7 +69,7 @@ body {
 }
 
 /* Developers Section */
-.devs h2 {
+h2 {
   color: white;
   font-size: clamp(1.5rem, 4vw, 2rem);
   text-align: center;
@@ -139,6 +144,12 @@ body {
   font-size: 12px;
   margin: 0 7px 7px 0;
   padding: 7px;
+}
+
+.maps iframe{
+  width: 420px;
+  height: 420px; 
+  border:0;
 }
 
 /* Media Queries */
