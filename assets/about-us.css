@@ -25,10 +25,16 @@ body {
 .clima{
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  margin: 50px;
-  color: antiquewhite;
+  gap: 2rem;
+  margin: auto;
+  border: none; 
+  border-radius: 10px; 
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  width: 60%;
 }
+
+
 /*
 #btn-w {
   margin-top: 40px;
@@ -82,23 +88,21 @@ body {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   max-width: 60%;
   text-align: center;
-  font-family: "Poppins", sans-serif;
 }
 
 /*seccion de opiniones*/
 .opiniones{
-  
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   /*height: 60vh;*/
-  margin-bottom: 10px;
+  margin-bottom: 60px;
 }
 
 .heading {
-  font-size: 25px;
+  
   max-width: 60%;
   /*text-transform: uppercase;*/
   color: rgb(78, 77, 77);
@@ -122,11 +126,10 @@ body {
 
 .servicio{
   color: antiquewhite;
-  font-size: 25px;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   text-align: center;
-  margin-bottom: 40px;
-  font-family: "Poppins", sans-serif;
-
+  margin-bottom: 30px;
+  
 }
 
 /*boton para contacto*/
@@ -257,7 +260,7 @@ width: calc(400px * 10);
 }
 
 .comentario {
-  font-family: "Poppins", sans-serif;
+  
   font-weight: 100;
   font-size: small;
   font-style: normal;
