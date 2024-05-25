@@ -24,7 +24,7 @@ Nuestro sistema de tickets desarrollado en Node.js es una solución eficiente y 
 
 ## Screenshots
 
-![App Screenshot](https://github.com/Leonardofsirota/ProyectoCodoACodo/blob/juan/assets/img/sistema.png)
+![App Screenshot](https://github.com/Leonardofsirota/ProyectoCodoACodo/assets/img/sistema.png)
 
 
 ## Tech Stack
