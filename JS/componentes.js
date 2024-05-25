@@ -17,6 +17,8 @@
 
 //componentes
 //NAVBAR
+{/* <a href="../section/user.html"><i class="fa-solid fa-user"></i></a> */}
+
 function Navbar() {
   var miNav = document.getElementsByClassName("navbar-nb")[0];
   miNav.innerHTML = `
@@ -30,7 +32,6 @@ function Navbar() {
       <i class="fas fa-bars"></i>
     </button>
     <div class="nav-links-nb">
-      <a href="../section/user.html"><i class="fa-solid fa-user"></i></a>
       <a href="../index.html">Inicio</a>
       <a href="../section/ticket-crud.html">Ticket</a>
       <a href="../section/about-us.html">Nosotros</a>
@@ -227,24 +228,26 @@ function calcularUltimoIdTicket(tickets) {
 
 ////////////////////////////////////////////////////////////////////
 
+document.addEventListener('DOMContentLoaded', function() {
 let key = "fae56571493a445c18bb37686ef46ad0";
 let ciudad = document.getElementById("city");
 let boton = document.getElementById("btn-w");
 let resultado = document.getElementById("resultado");
 
 let get_weather = () => {
-  let city_name = ciudad.value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric`;
+  let city = ciudad.value;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
   fetch(url)
     .then((resp) => resp.json())
     .then((data) => {
-      console.log("La temperatura es" + data.temp.main + "°");
+      console.log("La temperatura es" + data.main.temp + "°");
       console.log(data);
-      resultado.innerHTML = `<h3>${data.name}</h3>
-    <h3>${data.temp.main}</h3>`;
+      resultado.innerHTML = `<h5>${data.name}</h5>
+    <h5>${data.main.temp}</h5>`;
     });
 };
-//boton.addEventListener("click", get_weather);
+boton.addEventListener("click", get_weather);
+})
 
 function tomarDatosDelForm(form) {
   // Recolectar los datos del formulario

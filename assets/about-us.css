@@ -23,12 +23,19 @@ body {
 
 
 .clima{
-  display: flex;
+  display: grid;
+  grid-template-rows: 25px;
   justify-content: center;
-  gap: 3rem;
-  margin: 50px;
-  color: antiquewhite;
+  gap: 1rem;
+  margin: auto;
+  border: none; 
+  border-radius: 10px; 
+  background-color: rgba(243, 152, 216, 0.2);
+  padding: 5px;
+  width: 60%;
 }
+
+
 /*
 #btn-w {
   margin-top: 40px;
@@ -55,12 +62,12 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  height: 30vh;
+  height: 20vh;
  
 }
 /*presentamos nuestros servicios*/ 
 .titulo {
-  font-size: 50px;
+  font-size: 40px;
   text-transform: uppercase;
   color: rgb(78, 77, 77);
   text-decoration: none;
@@ -74,31 +81,30 @@ body {
   flex-direction: column;
   gap: 2rem;
   height: 60vh;
-  margin-bottom: 60px;
+  margin: 25px;
+  
 } 
 
 .nosotros { 
   color: antiquewhite;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
-  max-width: 60%;
+  
   text-align: center;
-  font-family: "Poppins", sans-serif;
 }
 
 /*seccion de opiniones*/
 .opiniones{
-  
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   /*height: 60vh;*/
-  margin-bottom: 60px;
+  margin: 60px 30px;
+  
 }
 
 .heading {
-  font-size: 25px;
   /*text-transform: uppercase;*/
   color: rgb(78, 77, 77);
   text-decoration: none;
@@ -111,7 +117,7 @@ body {
 
 .h1{
   margin-bottom: 4rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 500;
   color: rgb(78, 77, 77);
 
@@ -121,11 +127,10 @@ body {
 
 .servicio{
   color: antiquewhite;
-  font-size: 25px;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   text-align: center;
-  margin-bottom: 40px;
-  font-family: "Poppins", sans-serif;
-
+  margin-bottom: 30px;
+  
 }
 
 /*boton para contacto*/
@@ -214,6 +219,7 @@ body {
   position: relative;
   height: auto;
   overflow: hidden;
+  
 }
 
 .caja{
@@ -228,6 +234,7 @@ body {
 }
 
 .container .caja-contenedor{
+
 display: flex;
 gap: 3rem;
 animation: scroll 40s linear infinite;
@@ -256,7 +263,7 @@ width: calc(400px * 10);
 }
 
 .comentario {
-  font-family: "Poppins", sans-serif;
+  
   font-weight: 100;
   font-size: small;
   font-style: normal;
