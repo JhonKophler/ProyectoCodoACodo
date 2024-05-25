@@ -229,21 +229,24 @@ function calcularUltimoIdTicket(tickets) {
 
 ////////////////////////////////////////////////////////////////////
 
+document.addEventListener('DOMContentLoaded', function() {
 let key = "fae56571493a445c18bb37686ef46ad0";
 let ciudad = document.getElementById("city");
 let boton = document.getElementById("btn-w");
 let resultado = document.getElementById("resultado");
 
 let get_weather = () => {
-  let city_name = ciudad.value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric`;
+  let city = ciudad.value;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
   fetch(url)
     .then((resp) => resp.json())
     .then((data) => {
-      console.log("La temperatura es" + data.temp.main + "°");
+      console.log("La temperatura es" + data.main.temp + "°");
       console.log(data);
       resultado.innerHTML = `<h3>${data.name}</h3>
-    <h3>${data.temp.main}</h3>`;
+    <h3>${data.main.temp}</h3>`;
     });
 };
-//boton.addEventListener("click", get_weather);
+boton.addEventListener("click", get_weather);
+})
+
