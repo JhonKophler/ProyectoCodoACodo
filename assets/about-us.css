@@ -32,7 +32,7 @@ body {
   border-radius: 10px; 
   background-color: rgba(243, 152, 216, 0.2);
   padding: 5px;
-  width: 40%;
+  width: 60%;
 }
 
 /*icono de termostato para mejorar caja*/
@@ -40,11 +40,6 @@ body {
   color: orange;
   
 }
-
-.boton-clima{
-  font-size: 15px;
-}
-
 
 /*hover para cambiar color de termostato
 .material-symbols-outlined:before{
@@ -63,6 +58,15 @@ body {
   box-shadow: 0 0 15px orange;
 
 }*/
+
+/*Boton clima*/
+
+#btn-w{
+  border-radius: 10px;
+  background-color: lightpink;
+  text-decoration: none;
+  font-weight: bolder;
+}
 
 /*
 #btn-w {
@@ -83,12 +87,7 @@ body {
   border-radius: 10px;
 }*/
 
-#btn-w{
-  border-radius: 10px;
-  background-color: lightpink;
-  text-decoration: none;
-  font-weight: bolder;
-}
+
 
 
 .header {
