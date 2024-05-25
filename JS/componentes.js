@@ -243,8 +243,8 @@ let get_weather = () => {
     .then((data) => {
       console.log("La temperatura es" + data.main.temp + "°");
       console.log(data);
-      resultado.innerHTML = `<h3>${data.name}</h3>
-    <h3>${data.main.temp}</h3>`;
+      resultado.innerHTML = `<h5>${data.name}</h5>
+    <h5>${data.main.temp}</h5>`;
     });
 };
 boton.addEventListener("click", get_weather);
