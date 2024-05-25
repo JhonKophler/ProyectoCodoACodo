@@ -81,13 +81,14 @@ body {
   flex-direction: column;
   gap: 2rem;
   height: 60vh;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  width: 80%;
 } 
 
 .nosotros { 
   color: antiquewhite;
   font-size: clamp(1rem, 2.5vw, 1.5rem);
-  max-width: 60%;
+  max-width: 70%;
   text-align: center;
 }
 
@@ -100,11 +101,10 @@ body {
   gap: 3rem;
   /*height: 60vh;*/
   margin-bottom: 60px;
+  width: 80%;
 }
 
 .heading {
-  
-  max-width: 60%;
   /*text-transform: uppercase;*/
   color: rgb(78, 77, 77);
   text-decoration: none;
