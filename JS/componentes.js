@@ -338,19 +338,19 @@ function verificarUserID() {
 //Aqui empieza el slide de comentarios 
 
 //const initSlider = () => {
- // const caja = document.querySelector(".container .caja-contenedor");
+//  const caja = document.querySelector(".container .caja-contenedor");
 
-  //const slideButtons = document.querySelectorAll(".caja-contenedor .slide-button");
+ // const slideButtons = document.querySelectorAll(".caja-contenedor .slide-button");
 
 //mueve los comentarios según las flechas
 
  // slideButtons.forEach(button => {
-  //    button.addEventListener("click", () => {
-   //       const direction  = button.id === "atras" ? -1 : 1;
-   //       const scrollAmount = caja.clientWidth * direction;
-   //       caja.scrollBy({ left: scrollAmount, behavior: "smooth" });
-   //   });
-//  });
+ //     button.addEventListener("click", () => {
+ //         const direction  = button.id === "atras" ? -1 : 1;
+//          const scrollAmount = caja.clientWidth * direction;
+//          caja.scrollBy({left: scrollAmount, behavior: "smooth" });
+//     });
+// });
 //}
 
 
