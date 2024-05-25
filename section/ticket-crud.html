@@ -106,8 +106,7 @@
 
             <!--onclick="enviarFormulario()"-->
             <div class="col-12">
-              <button class="btn btn-primary"  type="submit"
-                id="submitFormularioModal">enviar formulario</button>
+              <button class="btn btn-primary" type="submit" id="submitFormularioModal">enviar formulario</button>
             </div>
           </form>
           <!-- final form -->
@@ -159,15 +158,8 @@
     Navbar();
     Footer();
 
-    setTimeout(() => {
-      if (typeof LISTA_TICKETS_GLOBAL !== 'undefined' && LISTA_TICKETS_GLOBAL.length > 0) {
-        mostrarTickets(LISTA_TICKETS_GLOBAL);
-        insertarUltimoIdTicket(LISTA_TICKETS_GLOBAL);
-      } else {
-        console.error('LISTA_TICKETS_GLOBAL no está disponible o está vacía');
-      }
-    }, 1500);
-
+    obtenerDatosDeJSON(mostrarTickets);
+    obtenerDatosDeJSON(calcularUltimoIdTicket);
 
     enviarAWebTicket();
 
@@ -204,38 +196,16 @@
         const formData = new FormData(form);
         const jsonData = {
           userId: "",
-          idTicket: parseInt(formData.get("idTicketCalculado"),16),
-          idPrioridad: parseInt(formData.get("idPrioridad"),16),
-          isEstado: parseInt(formData.get("idEstado"),16),
+          idTicket: parseInt(formData.get("idTicketCalculado"), 16),
+          idPrioridad: parseInt(formData.get("idPrioridad"), 16),
+          isEstado: parseInt(formData.get("idEstado"), 16),
           user: formData.get("user"),
           motivo: formData.get("motivo"),
           detalle: formData.get("detalle"),
           fechaCarga: new Date().toISOString(), // Formato de fecha estándar
+          idUsuarioQueResolvio: null,
           pokeAvatar: formData.get("pokeAvatar"),
         };
-
-        let req = new XMLHttpRequest();
-
-        req.onreadystatechange = () => {
-          if (req.readyState == XMLHttpRequest.DONE) {
-            if (req.status === 200) {
-              console.log("Datos enviados correctamente a JSON Bin:", req.responseText);
-            } else {
-              console.error("Error al enviar los datos a JSON Bin:", req.status, req.responseText);
-            }
-          }
-        };
-
-        req.open("PUT", "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849", true);
-        req.setRequestHeader("Content-Type", "application/json");
-        req.setRequestHeader("X-Master-Key", "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e");
-        req.setRequestHeader("X-Access-Key", "$2a$10$FBgFsnvZ/YHdl3biVqX2T./t5iBkDKWaazr3JZ1YOvDYLOrXCTw6e");
-        // Obtener los datos actuales
-        const currentData = LISTA_TICKETS_GLOBAL;
-        // Agregar el nuevo ticket a la lista
-        currentData.push(jsonData);
-
-        req.send(JSON.stringify(currentData));        
       });
     });
 

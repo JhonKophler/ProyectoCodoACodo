@@ -54,45 +54,16 @@ const estadoTicketID = {
 
 //obtener los tickets del json y mostrarlos
 function obtenerDatosDeJSON(callback) {
-  fetch("/JS/datos.json")
-    .then((response) => {
-      return response.json();
-    })
+  fetch("/JS/tickets.json")
+    .then((response) => response.json())
     .then((tickets) => {
       callback(tickets);
+    })
+    .catch((error) => {
+      console.error("Error al obtener los datos del JSON:", error);
+      callback([]); // Devolver una lista vacía en caso de error
     });
 }
-
-//traer los datos de tickets desde jsonBin
-const API_URL = "https://api.jsonbin.io/v3/b/664aed7bad19ca34f86c3849";
-const X_MASTER_KEY =
-  "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e";
-const X_ACCESS_KEY =
-  "$2a$10$RH7T4kckhXc3mWGFEHfWDuCPWUMikILghB/fQxqTz3/BbByE4zR1e";
-
-async function obtenerDatosDeApi() {
-  try {
-    const response = await fetch(API_URL, {
-      headers: {
-        "X-Master-Key": X_MASTER_KEY,
-        "X-Access-Key": X_ACCESS_KEY,
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    return data.record; // Los datos están bajo la clave 'record' en la respuesta
-  } catch (error) {
-    console.error("Error al obtener los datos:", error);
-  }
-}
-
-// Define la variable global
-var LISTA_TICKETS_GLOBAL = [];
-
-document.addEventListener("DOMContentLoaded", async () => {
-  //debugger;
-  LISTA_TICKETS_GLOBAL = await obtenerDatosDeApi();
-});
 
 //funcion para mostrar los tickets html
 function mostrarTickets(lista) {
@@ -129,26 +100,26 @@ function mostrarTickets(lista) {
 }
 
 function enviarAWebTicket() {
-  const ticketsContainer = document.getElementById("cont-tickets");
+  let ticketsContainer = document.getElementById("cont-tickets");
   ticketsContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("cargarHtml")) {
-      const varTicketId = event.target.getAttribute("data-id");
+      let varTicketId = event.target.getAttribute("data-id");
       window.location.href = `/section/ticket-detail.html?idTicket=${varTicketId}`;
     }
   });
 }
 
-//funcion para Cargar "section/ticket-detail.html" con la info del ticket seleccionado
-function cargarTicketSeleccionado() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const ticketId = urlParams.get("idTicket");
-  const tickets = LISTA_TICKETS_GLOBAL;
-  const ticket = tickets.find((t) => t.idTicket == ticketId);
 
-  //console.log(ticket);
+//funcion para Cargar "section/ticket-detail.html" con la info del ticket seleccionado
+function cargarTicketSeleccionado(lista) {
+  var urlParams = new URLSearchParams(window.location.search);
+  var ticketId = urlParams.get("idTicket");
+  var ticket = lista.find((t) => t.idTicket == ticketId);
+
+  console.log(ticket);
 
   if (ticket) {
-    const ticketDetails = document.getElementById("details");
+    var ticketDetails = document.getElementById("details");
     var ticketArmado = `
           <div class="detail-card">
             <div class="detail-card-header">
@@ -227,30 +198,36 @@ function obtenerFechaActual() {
 }
 
 //Espera una lista de tickets asi los acomoda y trae el ultimo primero
-function insertarUltimoIdTicket(tickets) {
-  // Ordenamos con SORT
-  tickets.sort((a, b) => new Date(b.fechaCarga) - new Date(a.fechaCarga));
+function calcularUltimoIdTicket(tickets) {
 
-  const divIdTicketElement = document.getElementById("idTicketModal");
-  const inputFormIdTicket = document.getElementById("idTicketCalculado");
-  const ticketCalculado = parseInt(tickets[0].idTicket) + 1;
+  // Ordenamos con SORT
+  tickets.sort((a, b) => new Date(b.idTicket) - new Date(a.idTicket));
+
+  var divIdTicketElement = document.getElementById("idTicketModal");
+  var inputFormIdTicket = document.getElementById("idTicketCalculado");
+  var ticketCalculado = parseInt(tickets[0].idTicket) + 1;
 
   divIdTicketElement.innerHTML = "Ticket Nº " + ticketCalculado;
   inputFormIdTicket.value = ticketCalculado.toString();
 }
 
-function generarUserID() {
-  return crypto.randomUUID();
-}
+////////////////////////////////////////////////////////////////////
 
-function verificarUserID() {
-  let userUUID = localStorage.getItem("userUUID");
-  if (!userUUID) {
-    userUUID = generateUUID();
-    localStorage.setItem("userUUID", userUUID);
-  }
-  return userUUID;
-}
+let key = "fae56571493a445c18bb37686ef46ad0";
+let ciudad = document.getElementById("city");
+let boton = document.getElementById("btn-w");
+let resultado = document.getElementById("resultado");
 
-
-
+let get_weather = () => {
+  let city_name = ciudad.value;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric`;
+  fetch(url)
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log("La temperatura es" + data.temp.main + "°");
+      console.log(data);
+      resultado.innerHTML = `<h3>${data.name}</h3>
+    <h3>${data.temp.main}</h3>`;
+    });
+};
+//boton.addEventListener("click", get_weather);
