@@ -21,6 +21,34 @@ body {
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
+
+.clima{
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 50px;
+  color: antiquewhite;
+}
+/*
+#btn-w {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  color: white;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bolder;
+  transition: 0.5s ease;
+}
+
+#btn-w :hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+*/
+
 .header {
   display: flex;
   justify-content: center;
@@ -78,7 +106,7 @@ body {
   outline: none;
   border: none;
   border-radius: 5px;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .h1{
@@ -121,20 +149,9 @@ body {
 
 /*seccion de comentarios enviados*/
 
-.comentario {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-size: small;
-  font-style: normal;
-}
-
-.caja-contenedor{
-  position: relative;
-}
-
 /*flechas*/
 
-.slide-button{
+/*.slide-button{
   position: absolute;
   top: 50%;
   width: 40px;
@@ -148,20 +165,22 @@ body {
 }
 
 .slide-button#atras{
-  left: -8px;
+  left: -10px;
 }
 
 
 .slide-button#adelante{
-  right: -8px;
+  right: -10px;
 }
 
 .slide-button :hover{
   background-color: rgba(235, 121, 174, 0.5)
-}
+} */
+
 /*caja de opiniones*/
 
-.caja-contenedor{
+/*
+.container{
   margin-top: 50px;
   display: grid;
   gap: 2rem;
@@ -172,10 +191,30 @@ body {
   scrollbar-width: none;
 }
 
-.caja-contenedor::-webkit-scrollbar{
+.container::-webkit-scrollbar{
   display: none;
 }
 
+
+.caja-contenedor{
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  cursor: pointer;
+  
+}*/
+
+
+
+.container{
+  padding-top: 40px;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
 
 .caja{
   padding: 3rem;
@@ -185,6 +224,40 @@ body {
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
   background-color:lightpink;
+}
+
+.container .caja-contenedor{
+display: flex;
+gap: 3rem;
+animation: scroll 40s linear infinite;
+-webkit-animation: scroll 40s linear infinite;
+width: calc(400px * 10);
+}
+
+.container .caja{
+  width: 400px;
+
+}
+
+.container .usuario{
+  width: 100%;
+}
+
+@keyframes scroll{
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-400px * 5));
+    transform: translateX(calc(-400px * 5));
+  }
+}
+
+.comentario {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-size: small;
+  font-style: normal;
 }
