@@ -7,38 +7,47 @@
   <title>Ticket Track</title>
   <link rel="stylesheet" href="../assets/about-us.css">
   <script src="/JS/componentes.js"></script>
-  <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon">
   <!-- favicon -->
   <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon">
   <!-- animaciones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!--Font de Google para icono-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
 </head>
+
 
 <body>
   <nav class="navbar-nb"></nav>
 
+<!--Consumimos una Api de Clima-->
+  <section class="clima">
+  <input type="text" placeholder="Ingrese su ciudad" id="city" value="">
+  <button id="btn-w">Temperatura en tu ciudad</button>
+  <div id="resultado"></div>
+  </section>
+  
 <!--una breve descripción del servicio y porque usar esta página, también agrego la opción de comentarios de usuarios-->
-
   <header class="header">
     <h2><a href="#" class="titulo">NOSOTROS</a></h2>
+
     <!-- <img src="https://raw.githubusercontent.com/Leonardofsirota/ProyectoCodoACodo/juan/assets/img/TIcketTrack.png?token=GHSAT0AAAAAACR6IEAPUVWYLC74KQSW2UU6ZSFSDIA" alt=""> -->
   </header>
-
 
   <section class="grilla">
       <p class="nosotros">
         <br>
         <br>
-        Hacemos de gestión de tickets de soporte, los clientes y los agentes pueden: <br>
+        Hacemos gestión de tickets de soporte. <br>
+        Nuestros agentes pueden: <br>
         Realizar un seguimiento del estado general de la solicitud <br>
-        Tener un acceso a los datos que se brindaron desde el primer contacto <br>
         Acceder rápidamente al historial completo de las conversaciones entre los clientes y agentes. <br>
         El ticket de soporte técnico permite organizar las incidencias y recopilar la mayor cantidad de
-        datos de clientes, <br>
-        lo que posibilita resolverlas en un período de tiempo más breve <br>
-        e identificar aquellas repetidas para solucionarlas en conjunto. <br> <br>
+        datos de clientes. <br>
+        Resuelven en un período de tiempo más breve <br>
+        Identificamos aquellas solicitudes repetidas para solucionarlas en conjunto. <br> <br>
 
       </p>
     </div>
@@ -56,13 +65,22 @@
     por eso ayudanos a mejorar y comentanos como estuvo nuestro servicio. 
     <br>
     </p>
+    <div class="header-btns animate__animated animate__fadeInUp">
+      <a target="_blank" href="mailto:ticket.track.servicios@gmail.com">Escribinos</a> <br>
   </div>
-    <div class="caja-contenedor">
+  
+<!--empiezo a realizar cajas con comentarios-->
+  <div class="container">
 
-      <!--empiezo a realizar cajas con comentarios-->
-      <div class="caja">
+  <div class="caja-contenedor">
+
+      <!--<button id="atras" class="slide-button material-symbol-rounded">
+        <span class="material-symbols-outlined">
+          chevron_right
+          </span></button>-->
+
+      <div class="caja">     
         <span><i class="fa-solid fa-pen-clip"></i></span>
-
         <div class="usuario">
           <h3>María</h3>
           <span><i class="fa-solid fa-person-dress"></i></span>
@@ -72,7 +90,6 @@
             <span><i class="fa-solid fa-star"></i></span>
             <span><i class="fa-solid fa-star"></i></span>
           </div>
-
           <div class="comentario">
             Fueron muy rápidos en la respuesta y me ayudaron a resolver mi problema.
           </div>
@@ -112,6 +129,7 @@
           </div>
         </div>
       </div>
+
       <div class="caja">
         <span><i class="fa-solid fa-pen-clip"></i></span>
         <div class="usuario">
@@ -127,7 +145,45 @@
           </div>
         </div>
       </div>
+
+      <div class="caja">
+        <span><i class="fa-solid fa-pen-clip"></i></span>
+        <div class="usuario">
+          <h3>Daniela</h3>
+          <span><i class="fa-solid fa-person-dress"></i></span>
+          <div class="star">
+            <span><i class="fa-solid fa-star"></i></span>
+            <span><i class="fa-solid fa-star"></i></span>
+          </div>
+          <div class="comentario">
+          Se tardaron en contestar, no fue de mucha ayuda.
+          </div>
+        </div>
+      </div>
+
+      <div class="caja">
+        <span><i class="fa-solid fa-pen-clip"></i></span>
+        <div class="usuario">
+          <h3>Roberto</h3>
+          <span><i class="fa-solid fa-person"></i></span>
+          <div class="star">
+            <span><i class="fa-solid fa-star"></i></span>
+            <span><i class="fa-solid fa-star"></i></span>
+            <span><i class="fa-solid fa-star"></i></span>
+            <span><i class="fa-solid fa-star"></i></span>
+          </div>
+          <div class="comentario">
+            Muy recomendable por la facilidad de ingresar para reclamo y la rápida respuesta. Estoy muy conforme y la recomendaría.
+          </div>
+        </div>
+        </div>
+        <!--<button id="adelante" class="slide-button material-symbol-rounded">
+          <span class="material-symbols-outlined">
+            chevron_left
+            </span></button>-->
+      </div>
     </div>
+
   </section>
   <footer></footer>
 </body>

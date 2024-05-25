@@ -323,3 +323,53 @@ function verificarUserID() {
 //     form.submit();
 //   });
 // }
+
+
+
+
+
+
+
+
+
+//Aqui empieza el slide de comentarios 
+
+//const initSlider = () => {
+//  const caja = document.querySelector(".container .caja-contenedor");
+
+ // const slideButtons = document.querySelectorAll(".caja-contenedor .slide-button");
+
+//mueve los comentarios según las flechas
+
+ // slideButtons.forEach(button => {
+ //     button.addEventListener("click", () => {
+ //         const direction  = button.id === "atras" ? -1 : 1;
+//          const scrollAmount = caja.clientWidth * direction;
+//          caja.scrollBy({left: scrollAmount, behavior: "smooth" });
+//     });
+// });
+//}
+
+
+//window.addEventListener("load", initSlider);
+
+//Api de clima en Nosotros
+
+let key = "fae56571493a445c18bb37686ef46ad0";
+  let ciudad = document.getElementById("city");
+  let boton = document.getElementById("btn-w");
+  let resultado = document.getElementById("resultado");
+
+let get_weather = () => {
+  let city_name = ciudad.value;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric`
+  fetch(url).then((resp) => resp.json()).then(data => {
+    console.log("La temperatura es" + (data.temp.main) + "°");
+    console.log(data);
+    resultado.innerHTML = `<h3>${data.name}</h3>
+    <h3>${data.temp.main}</h3>`
+
+  });
+
+}
+boton.addEventListener("click", get_weather);

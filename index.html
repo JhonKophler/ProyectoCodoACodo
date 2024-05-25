@@ -1,134 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <title>Ticket Track</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/index.css" />
+    <script src="/JS/componentes.js"></script>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      href="/assets/img/ticket-favicon.ico"
+      type="image/x-icon"
+    />
+    <!-- animaciones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <title>Ticket Track</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./assets/index.css" />
-  <script src="/JS/componentes.js"></script>
-  <!-- favicon -->
-  <link rel="shortcut icon" href="/assets/img/ticket-favicon.ico" type="image/x-icon" />
-  <!-- animaciones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-</head>
+  <body>
+    <nav class="navbar-nb"></nav>
 
-<body>
-  <nav class="navbar-nb"></nav>
+    <header class="header">
+      <h1 class="titulo animate__animated animate__fadeInDown">
+        ¡Bienvenido a nuestro sistema de tickets!
+      </h1>
+      <p class="subTitle animate__animated animate__fadeInUp">
+        TicketTrack ofrece todas las herramientas que los agentes de soporte
+        necesitan para gestionar y resolver los tickets con eficacia. Su
+        interfaz permite a los agentes manejar los tickets con facilidad,
+        brindando un excelente servicio y manteniendo al equipo de soporte
+        funcionando sin problemas.
+      </p>
+      <div class="header-btns animate__animated animate__fadeInUp">
+        <a href="./section/user.html">Iniciar Sesion</a>
+        <a href="./section/about-us.html">Saber mas</a>
+      </div>
+    </header>
 
-  <header class="header">
-    <h1 class="titulo animate__animated animate__fadeInDown">
-      ¡Bienvenido a nuestro sistema de tickets!
-    </h1>
-    <p class="subTitle animate__animated animate__fadeInUp">
-      TicketTrack ofrece todas las herramientas que los agentes de soporte
-      necesitan para gestionar y resolver los tickets con eficacia. Su
-      interfaz permite a los agentes manejar los tickets con facilidad,
-      brindando un excelente servicio y manteniendo al equipo de soporte
-      funcionando sin problemas.
-    </p>
-    <div class="header-btns animate__animated animate__fadeInUp">
-      <a href="./section/user.html">Iniciar Sesion</a>
-      <a href="./section/about-us.html">Saber mas</a>
-    </div>
-  </header>
-
-  <section class="devs">
-    <h2>Desarrolladores</h2>
-    <div class="cards-container">
-      <div class="profile-card">
-        
-        <img class="round" src="/assets/img/profile-pics/ian.png" alt="user" />
-        <h3>Ian Oliva</h3>
-        <h6>Buenos Aires</h6>
-        <p>front-end and <br /> back-end developer</p>
-        <div class="buttons">
-          <a class="primary">
-            Contactar
-          </a>
-          <a class="primary">
-            Following
-          </a>
+    <section class="devs">
+      <h2>Desarrolladores</h2>
+      <div class="cards-container">
+        <div class="profile-card">
+          <img
+            class="round"
+            src="/assets/img/profile-pics/ian.png"
+            alt="user"
+          />
+          <h3>Ian Oliva</h3>
+          <h6>Buenos Aires</h6>
+          <p>
+            front-end and <br />
+            back-end developer
+          </p>
+          <div class="buttons">
+            <a class="primary"> Contactar </a>
+            <a class="primary"> Following </a>
+          </div>
+          <div class="skills">
+            <h6>Skills</h6>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Php</li>
+              <li>Node.js</li>
+              <li>Mysql</li>
+            </ul>
+          </div>
         </div>
-        <div class="skills">
-          <h6>Skills</h6>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Php</li>
-            <li>Node.js</li>
-            <li>Mysql</li>           
-          </ul>
+
+        <div class="profile-card">
+          <img
+            class="round"
+            src="./assets/img/profile-pics/Angeles.jpg"
+            alt="user"
+          />
+          <h3>Angeles Licudis</h3>
+          <h6>Jujuy</h6>
+          <p>Web developer <br /></p>
+          <div class="buttons">
+            <a class="primary"> Contactar </a>
+            <a class="primary ghost"> Following </a>
+          </div>
+          <div class="skills">
+            <h6>Skills</h6>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <img
+            class="round"
+            src="/assets/img/profile-pics/juan.png"
+            alt="user"
+          />
+          <h3>Juan Corso</h3>
+          <h6>Buenos Aires</h6>
+          <p>
+            DBA Backup SQL Server<br />
+            Front-end developer
+          </p>
+          <div class="buttons">
+            <a class="primary"> Contactar </a>
+            <a class="primary ghost"> Following </a>
+          </div>
+          <div class="skills">
+            <h6>Skills</h6>
+            <ul>
+              <li>Desarrollador Front-End</li>
+              <li>JavaScript</li>
+              <li>Stack Net</li>
+              <li>Sql Server</li>
+              <li>Reporting Services</li>
+            </ul>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="profile-card">
-        
-        <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
-        <h3>Ricky Park</h3>
-        <h6>New York</h6>
-        <p>User interface designer and <br /> front-end developer</p>
-        <div class="buttons">
-          <a class="primary">
-            Contactar
-          </a>
-          <a class="primary ghost">
-            Following
-          </a>
-        </div>
-        <div class="skills">
-          <h6>Skills</h6>
-          <ul>
-            <li>UI / UX</li>
-            <li>Front End Development</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node</li>
-          </ul>
-        </div>
-      </div>
+    <footer></footer>
 
-      <div class="profile-card">
-        
-        <img class="round" src="/assets/img/profile-pics/juan.png" alt="user" />
-        <h3>Juan Corso</h3>
-        <h6>Buenos Aires</h6>
-        <p>DBA Backup SQL Server<br /> Front-end developer</p>
-        <div class="buttons">
-          <a class="primary">
-            Contactar
-          </a>
-          <a class="primary ghost">
-            Following
-          </a>
-        </div>
-        <div class="skills">
-          <h6>Skills</h6>
-          <ul>
-            <li>Desarrollador Front-End</li>
-            <li>JavaScript</li>
-            <li>Stack Net</li>
-            <li>Sql Server</li>
-            <li>Reporting Services</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer></footer>
-
-  <script>
-    Navbar();
-    Footer();
-  </script>
-  <script src="https://kit.fontawesome.com/977a02dee3.js" crossorigin="anonymous"></script>
-</body>
-
+    <script>
+      Navbar();
+      Footer();
+    </script>
+    <script
+      src="https://kit.fontawesome.com/977a02dee3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
