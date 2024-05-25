@@ -18,13 +18,13 @@
 <body>
   <nav class="navbar-nb"></nav>
   <!-- Button trigger modal -->
-  <button style="display: none;" id="botonModal" type="button" class="btn btn-primary" data-bs-toggle="modal"
+  <button id="botonModal" type="button" class="btn btn-primary d-none" data-bs-toggle="modal"
     data-bs-target="#exampleModal"></button>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg ">
-      <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered modal-lg d-flex justify-content-center" id="modalPadre">
+      <div class="modal-content" id="modalContenido">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="idTicketModal"></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -32,7 +32,7 @@
         <div class="modal-body">
 
           <!-- FORMULARIO -->
-          <form method="POST" id="formTicketModal" class="row g-3 needs-validation" novalidate>
+          <form id="formTicketModal" class="row g-3 needs-validation" novalidate>
             <div class="col-md-4 d-none">
               <label for="idTicketCalculado" class="form-label">idTicket</label>
               <input type="text" class="form-control" id="idTicketCalculado" name="idTicketCalculado" value="" required>
@@ -105,8 +105,9 @@
             </div>
 
             <!--onclick="enviarFormulario()"-->
-            <div class="col-12">
-              <button class="btn btn-primary" type="submit" id="submitFormularioModal">enviar formulario</button>
+            <!-- ENVIAR REALMENTE EL FORM -->
+            <div class="col-12" style="display: none;">
+              <button class="btn btn-primary" type="submit" id="submitFormularioModal"></button>
             </div>
           </form>
           <!-- final form -->
@@ -118,7 +119,8 @@
           </div>
           <div>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Enviar</button>
+            <button type="button" onclick="eventoReal()" class="btn btn-primary"
+              id="dispararBtnRealEnviar">Enviar</button>
           </div>
         </div>
       </div>
@@ -187,26 +189,18 @@
     })();
 
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("formTicketModal");
+    function eventoReal() {
+      const botonReal = document.getElementById("submitFormularioModal");
+      botonReal.click();
+    }
 
-      form.addEventListener("submit", (sync) => {
-        event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+    document.getElementById("formTicketModal").addEventListener("submit", (event) => {
+      event.preventDefault();
 
-        const formData = new FormData(form);
-        const jsonData = {
-          userId: "",
-          idTicket: parseInt(formData.get("idTicketCalculado"), 16),
-          idPrioridad: parseInt(formData.get("idPrioridad"), 16),
-          isEstado: parseInt(formData.get("idEstado"), 16),
-          user: formData.get("user"),
-          motivo: formData.get("motivo"),
-          detalle: formData.get("detalle"),
-          fechaCarga: new Date().toISOString(), // Formato de fecha estándar
-          idUsuarioQueResolvio: null,
-          pokeAvatar: formData.get("pokeAvatar"),
-        };
-      });
+      var formModal = document.getElementById("formTicketModal");
+      var datosDelForm = tomarDatosDelForm(formModal);
+      mostrarTicketCreadoRecien(datosDelForm);
+
     });
 
 
