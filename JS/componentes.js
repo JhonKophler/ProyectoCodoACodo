@@ -1,19 +1,3 @@
-//funciones
-// function Ordenar() {
-//   // Reordena los elementos de manera aleatoria
-//   listaElementos.sort(function (a, b) {
-//     return 0.5 - Math.random();
-//   });
-
-//   // Elimina todos los elementos del contenedor
-//   var contenedor = document.querySelector(".container");
-//   contenedor.innerHTML = "";
-
-//   // Agrega los elementos reordenados al contenedor
-//   listaElementos.forEach(function (elemento) {
-//     contenedor.appendChild(elemento);
-//   });
-// }
 
 //componentes
 //NAVBAR
