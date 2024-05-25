@@ -24,7 +24,7 @@ Nuestro sistema de tickets desarrollado en Node.js es una solución eficiente y 
 
 ## Screenshots
 
-![App Screenshot](https://d1eipm3vz40hy0.cloudfront.net/images/AMER/ticketingsystem22.jpg)
+![App Screenshot](https://github.com/Leonardofsirota/ProyectoCodoACodo/blob/juan/assets/img/sistema.png)
 
 
 ## Tech Stack
@@ -33,7 +33,7 @@ Nuestro sistema de tickets desarrollado en Node.js es una solución eficiente y 
 
 **JSON Interno:** Utilizamos un JSON interno para guardar los datos de los participantes del proyecto para mostrarlos en la web, tambien lo usamos para guardar los datos de las personas que crean los tickets.
 
-**Api Weather:** Mostramos el clima en el footer.
+**Api Weather:** Mostramos el clima.
 
 **Server:** Funciones internas con JS. A futuro cambiaremos a Node JS.
 
@@ -43,4 +43,3 @@ Nuestro sistema de tickets desarrollado en Node.js es una solución eficiente y 
 
 **GMail:** Creamos una cuenta para poder recibir los detalles de cada ticket creado y asi poder enviar una copia al usuario que lo genera.
 
-**JSONBin:** [JSONBin](https://jsonbin.io/) La utilizamos para cargar los Tickets que la gente carga y asi poder traerlos con un fetch desde nuestras funciones y cargar los tikets en [Seccion Tickets] (ruta en donde vamos a desplegar el programa/ruta de tickets)
