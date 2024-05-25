@@ -1,6 +1,8 @@
 
 //componentes
 //NAVBAR
+{/* <a href="../section/user.html"><i class="fa-solid fa-user"></i></a> */}
+
 function Navbar() {
   var miNav = document.getElementsByClassName("navbar-nb")[0];
   miNav.innerHTML = `
@@ -14,7 +16,6 @@ function Navbar() {
       <i class="fas fa-bars"></i>
     </button>
     <div class="nav-links-nb">
-      <a href="../section/user.html"><i class="fa-solid fa-user"></i></a>
       <a href="../index.html">Inicio</a>
       <a href="../section/ticket-crud.html">Ticket</a>
       <a href="../section/about-us.html">Nosotros</a>
@@ -109,7 +110,6 @@ function enviarAWebTicket() {
   });
 }
 
-
 //funcion para Cargar "section/ticket-detail.html" con la info del ticket seleccionado
 function cargarTicketSeleccionado(lista) {
   var urlParams = new URLSearchParams(window.location.search);
@@ -199,7 +199,6 @@ function obtenerFechaActual() {
 
 //Espera una lista de tickets asi los acomoda y trae el ultimo primero
 function calcularUltimoIdTicket(tickets) {
-
   // Ordenamos con SORT
   tickets.sort((a, b) => new Date(b.idTicket) - new Date(a.idTicket));
 
@@ -213,21 +212,71 @@ function calcularUltimoIdTicket(tickets) {
 
 ////////////////////////////////////////////////////////////////////
 
+document.addEventListener('DOMContentLoaded', function() {
 let key = "fae56571493a445c18bb37686ef46ad0";
 let ciudad = document.getElementById("city");
 let boton = document.getElementById("btn-w");
 let resultado = document.getElementById("resultado");
 
 let get_weather = () => {
-  let city_name = ciudad.value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=${key}&units=metric`;
+  let city = ciudad.value;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
   fetch(url)
     .then((resp) => resp.json())
     .then((data) => {
-      console.log("La temperatura es" + data.temp.main + "°");
+      console.log("La temperatura es" + data.main.temp + "°");
       console.log(data);
-      resultado.innerHTML = `<h3>${data.name}</h3>
-    <h3>${data.temp.main}</h3>`;
+      resultado.innerHTML = `<h5>${data.name}</h5>
+    <h5>${data.main.temp}</h5>`;
     });
 };
-//boton.addEventListener("click", get_weather);
+boton.addEventListener("click", get_weather);
+})
+
+function tomarDatosDelForm(form) {
+  // Recolectar los datos del formulario
+  const formData = new FormData(form);
+  const jsonData = {
+    userId: "",
+    idTicket: parseInt(formData.get("idTicketCalculado"), 16),
+    idPrioridad: parseInt(formData.get("idPrioridad"), 16),
+    isEstado: parseInt(formData.get("idEstado"), 16),
+    user: formData.get("user"),
+    motivo: formData.get("motivo"),
+    detalle: formData.get("detalle"),
+    fechaCarga: new Date().toISOString(), // Formato de fecha estándar
+    idUsuarioQueResolvio: null,
+    pokeAvatar: formData.get("pokeAvatar"),
+  };
+
+  // Devolver los datos como JSON string
+  return jsonData;
+}
+
+function mostrarTicketCreadoRecien(paqueteDatos) {
+  const divDatos = document.getElementById("modalPadre");
+
+  divDatos.innerHTML = `<div class="card mb-3" style="width: 500px;user-select: none;">
+  <div class="row g-0">
+    <div class="col-md-4 card-dentro-del-modal">
+    </div>
+    <div class="col-md-8" style="display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;" >
+      <div class="card-body">
+        <h5 class="card-title">😁Ticket Enviado Exitosamente!</h5>
+        <p class="card-text">Gracias ${paqueteDatos.user} por confiar en nosotros!</p>
+        <p class="card-text"><small class="text-body-secondary">En los proximos dias recibiras noticias de tu ticket</small></p>
+      </div>
+    </div>
+  </div>
+</div>`; // Mostrar los datos en el div
+
+  // Cerrar el div después de 4 segundos
+  setTimeout(function () {
+    divDatos.style.display = "none";
+
+    // Simular envío de formulario y redirigir a tickets.html
+    window.location.href = "ticket-crud.html";
+  }, 4000);
+}

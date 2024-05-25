@@ -47,7 +47,7 @@ body {
   padding: 0 1rem 0 2.5rem;
   background-color: rgb(121, 19, 189);
   border-radius: 1rem;
-  user-select:none;
+  user-select: none;
 }
 
 .sombraIcono {
@@ -59,9 +59,11 @@ body {
 .addTicketButton:hover {
   right: 0px;
   opacity: 1;
+
   span {
     width: 100%;
   }
+
   i {
     animation: rotar 1.2s linear infinite;
   }
@@ -148,8 +150,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  p{
-    font-size: .9rem!important;
+
+  p {
+    font-size: .9rem !important;
     background-color: #000000cf;
     border-radius: .5rem;
     padding: .2rem .7rem;
@@ -162,6 +165,15 @@ body {
   color: #fff !important;
 }
 
-.fechaAfter::before{
+.fechaAfter::before {
   content: "Fecha";
+}
+
+.card-dentro-del-modal {
+  width: 200px;
+  background-image: url("../assets/img/success.gif");
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
