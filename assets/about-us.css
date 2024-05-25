@@ -23,13 +23,14 @@ body {
 
 
 .clima{
-  display: flex;
+  display: grid;
+  grid-template-rows: 25px;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin: auto;
   border: none; 
   border-radius: 10px; 
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(243, 152, 216, 0.2);
   padding: 5px;
   width: 60%;
 }
@@ -61,12 +62,12 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  height: 30vh;
+  height: 20vh;
  
 }
 /*presentamos nuestros servicios*/ 
 .titulo {
-  font-size: 50px;
+  font-size: 40px;
   text-transform: uppercase;
   color: rgb(78, 77, 77);
   text-decoration: none;
@@ -116,7 +117,7 @@ body {
 
 .h1{
   margin-bottom: 4rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 500;
   color: rgb(78, 77, 77);
 
