@@ -147,8 +147,8 @@ h2 {
 }
 
 .maps iframe{
-  width: 420px;
-  height: 420px; 
+  width: 500px;
+  height: 500px; 
   border:0;
 }
 
@@ -179,5 +179,11 @@ h2 {
 
   .profile-card {
     width: 100%;
+  }
+
+  .maps iframe{
+    width: 250px;
+    height: 250px; 
+    border:0;
   }
 }
