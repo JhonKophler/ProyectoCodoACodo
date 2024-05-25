@@ -94,11 +94,12 @@ body {
   flex-direction: column;
   gap: 2rem;
   /*height: 60vh;*/
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .heading {
   font-size: 25px;
+  max-width: 60%;
   /*text-transform: uppercase;*/
   color: rgb(78, 77, 77);
   text-decoration: none;
