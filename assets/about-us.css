@@ -106,7 +106,7 @@ body {
   outline: none;
   border: none;
   border-radius: 5px;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 }
 
 .h1{
@@ -149,14 +149,9 @@ body {
 
 /*seccion de comentarios enviados*/
 
-
-.container{
-  position: relative;
-}
-
 /*flechas*/
 
-.slide-button{
+/*.slide-button{
   position: absolute;
   top: 50%;
   width: 40px;
@@ -180,9 +175,11 @@ body {
 
 .slide-button :hover{
   background-color: rgba(235, 121, 174, 0.5)
-}
+} */
+
 /*caja de opiniones*/
 
+/*
 .container{
   margin-top: 50px;
   display: grid;
@@ -206,9 +203,17 @@ body {
   gap: 3rem;
   background-color: var(--white);
   border-radius: 1rem;
-  
   cursor: pointer;
   
+}*/
+
+
+
+.container{
+  padding-top: 40px;
+  position: relative;
+  height: auto;
+  overflow: hidden;
 }
 
 .caja{
@@ -221,6 +226,35 @@ body {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
   background-color:lightpink;
 }
+
+.container .caja-contenedor{
+display: flex;
+gap: 3rem;
+animation: scroll 40s linear infinite;
+-webkit-animation: scroll 40s linear infinite;
+width: calc(400px * 10);
+}
+
+.container .caja{
+  width: 400px;
+
+}
+
+.container .usuario{
+  width: 100%;
+}
+
+@keyframes scroll{
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-400px * 5));
+    transform: translateX(calc(-400px * 5));
+  }
+}
+
 .comentario {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
